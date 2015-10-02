@@ -1,0 +1,43 @@
+#whatis {
+  margin: 60px 0;
+  font-size: 1.2rem;
+  @media screen and (max-width: 767px) {
+    margin: 30px 0;
+  }
+
+  .head {
+    font-size: 1.7rem;
+    margin-bottom: 40px;
+    @media screen and (max-width: 767px) {
+      font-size: 1.5rem;
+    }
+
+    sup {
+      font-size: 50%;
+      vertical-align: top;
+    }
+  }
+
+  .space {
+    margin-top:40px;
+    @media screen and (max-width: 767px) {
+      margin-top: 0px;
+    }
+  }
+
+  .description {
+    font-size: 1.5rem;
+    line-height: 120%;
+    @media screen and (max-width: 767px) {
+      font-size: 1.3rem;
+    }
+  }
+
+  .intro-head {
+    font-size: 1.6rem;
+    margin-bottom: 14px;
+    @media screen and (max-width: 767px) {
+      font-size: 1.4rem;
+    }
+  }
+}

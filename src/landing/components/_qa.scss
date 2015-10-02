@@ -1,0 +1,22 @@
+#qa {
+  .begin {
+    padding-top: 40px;
+    font-size: 1.5rem;
+    .box {
+      margin: 20px 0px;
+      padding: 20px;
+      border: 2px solid #FFF;
+      .q {
+        margin-bottom: 12px;
+        color: #5DD8D8;
+      }
+    }
+  }
+
+  .btn {
+    margin-top: 10px;
+    img {
+      cursor: pointer;
+    }
+  }
+}

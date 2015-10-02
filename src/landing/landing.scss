@@ -1,0 +1,63 @@
+@import './components/navbar';
+@import './components/head';
+@import './components/categories';
+@import './components/sponsor';
+@import './components/guru';
+@import './components/whatis';
+@import './components/place';
+@import './components/qa';
+@import './components/footer';
+@import './components/timeline';
+@import './components/social';
+//@import './components/youtube';
+
+.font-bold {
+  font-family: 'quarkbold', Roboto, Arial, Tahoma, sans-serif;
+}
+.font-light {
+  font-family: 'quarklight', Roboto, Arial, Tahoma, sans-serif;
+}
+
+html {
+  width:100%;
+}
+
+body {
+  font-size: 120%;
+  background: #111;
+  color: #FFF;
+  overflow-x: hidden;
+  @extend .font-light;
+  @media screen and (max-width: 767px) {
+    font-size: 100%;
+  }
+
+  .bg-parallax {
+    transition: all 1s;
+  }
+}
+
+.modal.in {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+}
+
+section {
+  padding: 20px 0;
+
+  .title-head {
+    text-align: center;
+    font-size: 2rem;
+    @media screen and (max-width: 767px) {
+      font-size: 1.3rem;
+    }
+  }
+  .title-head-large {
+    @extend .title-head;
+    font-size: 2.5rem;
+    margin-top: 10px;
+    @media screen and (max-width: 767px) {
+      font-size: 2rem;
+    }
+  }
+}

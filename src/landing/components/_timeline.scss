@@ -1,0 +1,41 @@
+#timeline {
+
+  & > .top-content {
+    padding-top: 40px;
+    background: rgba(17,25,47,.5);
+  }
+
+  .bottom-space {
+    background: url('../images/landing/bg/bg-2.png');
+    background-size: 100% 100%;
+    height: 160px;
+    @media screen and (max-width: 767px) {
+      height: 60px;
+    }
+  }
+
+  .head {
+    margin: 30px 0;
+    margin-bottom: 80px;
+    @media screen and (max-width: 991px) {
+      margin-bottom: 20px;
+    }
+    @media screen and (min-width: 768px) and (max-width: 1366px) {
+      margin-top:20px;
+      margin-bottom: 40px;
+    }
+  }
+
+  .day {
+    font-size: 1.4rem;
+    padding: 10px 20px;
+    @media screen and (max-width: 991px) {
+      font-size: 1.3rem;
+      padding: 14px 0;
+    }
+    @media screen and (min-width: 768px) and (max-width: 1366px) {
+      font-size: 1.3rem;
+      padding: 3px 25px;
+    }
+  }
+}

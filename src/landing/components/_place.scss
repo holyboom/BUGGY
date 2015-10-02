@@ -1,0 +1,47 @@
+#place {
+  margin-top: 60px;
+  @media screen and (max-width: 767px) {
+    margin-top: 20px;
+  }
+
+  .space {
+    margin: 50px 0;
+    @media screen and (max-width: 767px) {
+      margin: 20px 0;
+    }
+  }
+
+  .each {
+    .font-bold { margin: 20px 0 5px; }
+    margin-bottom: 20px;
+  }
+
+  .sub-head {
+    margin-bottom: 4px;
+    margin-top: 9px;
+    font-size: 1.5rem;
+  }
+
+  .map {
+    margin-top: 40px;
+    background: url('../images/landing/place/map.png');
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    transition: all 1s;
+    cursor: pointer;
+
+    .show { width:100%; height:100%; }
+    .btn {
+      opacity: 0;
+      transition: all 0.5s;
+      @media screen and (max-width: 991px) {
+        opacity: 1;
+      }
+    }
+
+    &:hover {
+      .btn { opacity: 1; }
+    }
+  }
+}

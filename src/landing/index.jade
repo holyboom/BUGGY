@@ -1,0 +1,56 @@
+doctype html
+html
+  head
+    | <base href='<?= base_url() ?>views/landing/' target='_blank'>
+    meta(name='viewport',content="width=device-width, initial-scale=1")
+    link(rel='stylesheet',href='../bower/bootstrap/dist/css/bootstrap.min.css')
+    link(rel='shortcut icon', href='../images/favicon/favicon16.ico', type='image/x-icon')
+    link(rel='stylesheet',href='../bower/reset-css/reset.css')
+    link(rel='stylesheet',href='font/quark.css')
+    link(rel='stylesheet',href='landing.css')
+  body
+    | <div id="fb-root"></div>
+    | <script>(function(d, s, id) {
+    | var js, fjs = d.getElementsByTagName(s)[0];
+    | if (d.getElementById(id)) return;
+    | js = d.createElement(s); js.id = id;
+    | js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=924745590937811";
+    | fjs.parentNode.insertBefore(js, fjs);
+    | }(document, 'script', 'facebook-jssdk'));</script>
+    
+    div.bg-parallax(style="background: url('../images/landing/bg/star3.png');")
+      div.bg-parallax(style="background: url('../images/landing/bg/star2.png');")
+        div.bg-parallax(style="background: url('../images/landing/bg/star1.png');")
+          include ./components/navbar.jade
+          include ./components/head.jade
+          include ./components/categories.jade
+          include ./components/whatis.jade
+          include ./components/timeline.jade
+          include ./components/place.jade
+          include ./components/qa.jade
+          include ./components/sponsor.jade
+          include ./components/guru.jade
+          include ./components/pr.jade
+          include ./components/social.jade
+          
+          include ./components/footer.jade
+    
+    div.container
+      div.row
+        div.col-xs-12
+          div#popup-design.modal.fade
+            div.modal-dialog.modal-lg
+              img.img-responsive.center-block(src='../images/landing/categories/design-popup.png')
+          div#popup-programming.modal.fade
+            div.modal-dialog.modal-lg
+              img.img-responsive.center-block(src='../images/landing/categories/programming-popup.png')
+          div#popup-content.modal.fade
+            div.modal-dialog.modal-lg
+              img.img-responsive.center-block(src='../images/landing/categories/content-popup.png')
+          div#popup-marketing.modal.fade
+            div.modal-dialog.modal-lg
+              img.img-responsive.center-block(src='../images/landing/categories/marketing-popup.png')
+    
+    script(src='../bower/jquery/dist/jquery.min.js')
+    script(src='../bower/bootstrap/dist/js/bootstrap.min.js')
+    script(src='landing.js')

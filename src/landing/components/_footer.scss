@@ -1,0 +1,25 @@
+footer {
+  background: url('../images/landing/footer/bg.png');
+  background-size: 100% 100%;
+  padding: 20px;
+
+  font-size: 1rem;
+
+  .head {
+    font-size: 2rem;
+    margin-bottom: 4px;
+  }
+  
+  div.container-fluid{
+  	.row{
+  		.col-xs-6{
+  			margin-top: 5%;	
+  			width: 22%;  		
+	  		img{
+		  		cursor: pointer;
+	  		}
+  		}
+  	}
+  }
+  
+}
