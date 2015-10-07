@@ -1,0 +1,414 @@
+.navbar-default {
+  background-color: rgba(64, 64, 64, 0.8);
+  border-color: rgba(64, 64, 64, 0.8); }
+  .navbar-default .navbar-brand {
+    color: #fbfbfb; }
+    .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+      color: #fbfbfb; }
+  .navbar-default .navbar-text {
+    color: #fbfbfb; }
+  .navbar-default .navbar-nav > li > a {
+    color: #fbfbfb; }
+    .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+      color: #fbfbfb; }
+  .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+    color: #fbfbfb;
+    background-color: rgba(64, 64, 64, 0.8); }
+  .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+    color: #fbfbfb;
+    background-color: rgba(64, 64, 64, 0.8); }
+  .navbar-default .navbar-toggle {
+    border-color: rgba(64, 64, 64, 0.8); }
+    .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+      background-color: rgba(64, 64, 64, 0.8); }
+    .navbar-default .navbar-toggle .icon-bar {
+      background-color: #fbfbfb; }
+  .navbar-default .navbar-collapse,
+  .navbar-default .navbar-form {
+    border-color: #fbfbfb; }
+  .navbar-default .navbar-link {
+    color: #fbfbfb; }
+    .navbar-default .navbar-link:hover {
+      color: #fbfbfb; }
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #fbfbfb; }
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+      color: #fbfbfb; }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #fbfbfb;
+    background-color: rgba(64, 64, 64, 0.8); } }
+
+#head {
+  padding-top: 40px;
+  background: url("../images/landing/bg/bg-main.png") center center;
+  background-size: cover; }
+  #head .quote {
+    font-size: 1.7rem; }
+    @media screen and (max-width: 767px) {
+      #head .quote {
+        font-size: 1rem; } }
+
+@keyframes rotating {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+
+@keyframes rotatingReverse {
+  from {
+    transform: rotate(360deg); }
+  to {
+    transform: rotate(0deg); } }
+  #head .rotable {
+    animation: rotating 25s linear infinite; }
+  #head .rotable-reverse {
+    animation: rotatingReverse 25s linear infinite; }
+
+#categories {
+  background-size: cover;
+  padding-top: 0px; }
+  #categories > .all-content {
+    padding-bottom: 80px;
+    background: rgba(17, 25, 47, 0.5); }
+  #categories .top-space {
+    height: 80px;
+    background: rgba(17, 25, 47, 0.5);
+    background-size: 100% 100%; }
+    @media screen and (max-width: 767px) {
+      #categories .top-space {
+        height: 40px; } }
+    @media screen and (min-width: 768px) and (max-width: 1366px) {
+      #categories .top-space {
+        height: 60px; } }
+  #categories .container-fluid a {
+    color: #fff; }
+  #categories .logo {
+    padding-top: 60px; }
+    @media screen and (min-width: 768px) and (max-width: 1366px) {
+      #categories .logo {
+        padding-top: 30px; } }
+  #categories .cat-title {
+    margin: 25px 0;
+    font-size: 1.4rem; }
+    @media screen and (max-width: 767px) {
+      #categories .cat-title {
+        margin: 17px 0; } }
+  #categories .cat-des {
+    font-size: 1.2rem;
+    line-height: 120%;
+    margin-bottom: 36px; }
+    @media screen and (max-width: 767px) {
+      #categories .cat-des {
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-bottom: 10px; } }
+    @media screen and (min-width: 768px) and (max-width: 1366px) {
+      #categories .cat-des {
+        margin-bottom: 20px; } }
+  #categories .cat-more {
+    font-size: 1.7rem;
+    margin-bottom: 24px;
+    cursor: pointer; }
+    @media screen and (max-width: 767px) {
+      #categories .cat-more {
+        font-size: 1.4rem;
+        margin-bottom: 16px; } }
+    @media screen and (min-width: 768px) and (max-width: 1366px) {
+      #categories .cat-more {
+        font-size: 1.5rem;
+        margin-bottom: 16px; } }
+  #categories .detail-1:hover {
+    color: #00AEEF; }
+  #categories .detail-2:hover {
+    color: #F7941E; }
+  #categories .detail-3:hover {
+    color: #EF4136; }
+  #categories .detail-4:hover {
+    color: #00A79D; }
+  #categories .counting {
+    font-size: 1.5rem;
+    margin-bottom: 16px; }
+  #categories .counting-num {
+    font-size: 3rem;
+    margin-bottom: 20px; }
+    @media screen and (max-width: 767px) {
+      #categories .counting-num {
+        font-size: 2rem;
+        margin-bottom: 16px; } }
+    @media screen and (min-width: 768px) and (max-width: 1366px) {
+      #categories .counting-num {
+        font-size: 2.5rem; } }
+  #categories .register-btn {
+    font-size: 1.5rem;
+    padding: 16px 32px;
+    display: inline-block;
+    border: 3px solid #FFF;
+    background: transparent;
+    transition: all 0.2s; }
+    @media screen and (max-width: 767px) {
+      #categories .register-btn {
+        font-size: 1.2rem;
+        border-width: 2px; } }
+    @media screen and (min-width: 768px) and (max-width: 1366px) {
+      #categories .register-btn {
+        font-size: 1.3rem;
+        padding: 12px 32px; } }
+  #categories .register-btn:hover {
+    border-radius: 30px; }
+  #categories .content .cat-title {
+    color: #00AEEF; }
+  #categories .design .cat-title {
+    color: #F7941E; }
+  #categories .marketing .cat-title {
+    color: #EF4136; }
+  #categories .programming .cat-title {
+    color: #01A096; }
+
+#sponsor {
+  padding-top: 80px;
+  padding-bottom: 80px; }
+  @media screen and (max-width: 767px) {
+    #sponsor {
+      padding-top: 20px;
+      padding-bottom: 20px; } }
+  @media screen and (min-width: 768px) and (max-width: 1366px) {
+    #sponsor {
+      padding-top: 40px;
+      padding-bottom: 40px; } }
+  #sponsor .sponsor {
+    width: 80%;
+    margin-top: 7%; }
+  #sponsor .space {
+    height: 60px; }
+    @media screen and (max-width: 767px) {
+      #sponsor .space {
+        height: 0px; } }
+  #sponsor .big, #sponsor .medium, #sponsor .small {
+    margin-top: 20px; }
+  #sponsor .big {
+    background: url("../images/landing/sponsor/frame.png");
+    background-size: cover;
+    padding: 18px; }
+    @media screen and (max-width: 767px) {
+      #sponsor .big {
+        padding: 12px; } }
+
+#guru {
+  background: rgba(17, 25, 47, 0.5);
+  padding-top: 120px; }
+  @media screen and (max-width: 767px) {
+    #guru {
+      padding-top: 30px; } }
+  @media screen and (min-width: 768px) and (max-width: 1366px) {
+    #guru {
+      padding-top: 80px; } }
+  #guru .space {
+    height: 60px; }
+    @media screen and (max-width: 767px) {
+      #guru .space {
+        height: 20px; } }
+    @media screen and (min-width: 768px) and (max-width: 1366px) {
+      #guru .space {
+        height: 20px; } }
+  #guru .hidden-xs .ground-wrapper .ground {
+    position: relative;
+    background: url("../images/landing/guru/ground.png");
+    background-size: cover; }
+    #guru .hidden-xs .ground-wrapper .ground .img {
+      background-size: cover;
+      position: absolute;
+      left: 0px;
+      top: 0px; }
+    #guru .hidden-xs .ground-wrapper .ground .description {
+      font-size: 1.5rem;
+      padding: 20px;
+      background: #08111C;
+      box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.5); }
+  #guru .visible-xs img {
+    padding: 5px; }
+  #guru .visible-xs .description {
+    margin: 0 10px;
+    padding: 10px 0px 25px;
+    font-size: 1.5rem; }
+    #guru .visible-xs .description .font-bold {
+      margin-bottom: 10px; }
+
+#whatis {
+  margin: 60px 0;
+  font-size: 1.2rem; }
+  @media screen and (max-width: 767px) {
+    #whatis {
+      margin: 30px 0; } }
+  #whatis .head {
+    font-size: 1.7rem;
+    margin-bottom: 40px; }
+    @media screen and (max-width: 767px) {
+      #whatis .head {
+        font-size: 1.5rem; } }
+    #whatis .head sup {
+      font-size: 50%;
+      vertical-align: top; }
+  #whatis .space {
+    margin-top: 40px; }
+    @media screen and (max-width: 767px) {
+      #whatis .space {
+        margin-top: 0px; } }
+  #whatis .description {
+    font-size: 1.5rem;
+    line-height: 120%; }
+    @media screen and (max-width: 767px) {
+      #whatis .description {
+        font-size: 1.3rem; } }
+  #whatis .intro-head {
+    font-size: 1.6rem;
+    margin-bottom: 14px; }
+    @media screen and (max-width: 767px) {
+      #whatis .intro-head {
+        font-size: 1.4rem; } }
+
+#place {
+  margin-top: 60px; }
+  @media screen and (max-width: 767px) {
+    #place {
+      margin-top: 20px; } }
+  #place .space {
+    margin: 50px 0; }
+    @media screen and (max-width: 767px) {
+      #place .space {
+        margin: 20px 0; } }
+  #place .each {
+    margin-bottom: 20px; }
+    #place .each .font-bold {
+      margin: 20px 0 5px; }
+  #place .sub-head {
+    margin-bottom: 4px;
+    margin-top: 9px;
+    font-size: 1.5rem; }
+  #place .map {
+    margin-top: 40px;
+    background: url("../images/landing/place/map.png");
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    transition: all 1s;
+    cursor: pointer; }
+    #place .map .show {
+      width: 100%;
+      height: 100%; }
+    #place .map .btn {
+      opacity: 0;
+      transition: all 0.5s; }
+      @media screen and (max-width: 991px) {
+        #place .map .btn {
+          opacity: 1; } }
+    #place .map:hover .btn {
+      opacity: 1; }
+
+#qa .begin {
+  padding-top: 40px;
+  font-size: 1.5rem; }
+  #qa .begin .box {
+    margin: 20px 0px;
+    padding: 20px;
+    border: 2px solid #FFF; }
+    #qa .begin .box .q {
+      margin-bottom: 12px;
+      color: #5DD8D8; }
+
+#qa .btn {
+  margin-top: 10px; }
+  #qa .btn img {
+    cursor: pointer; }
+
+footer {
+  background: url("../images/landing/footer/bg.png");
+  background-size: 100% 100%;
+  padding: 20px;
+  font-size: 1rem; }
+  footer .head {
+    font-size: 2rem;
+    margin-bottom: 4px; }
+  footer div.container-fluid .row .col-xs-6 {
+    margin-top: 5%;
+    width: 22%; }
+    footer div.container-fluid .row .col-xs-6 img {
+      cursor: pointer; }
+
+#timeline > .top-content {
+  padding-top: 40px;
+  background: rgba(17, 25, 47, 0.5); }
+
+#timeline .bottom-space {
+  background: url("../images/landing/bg/bg-2.png");
+  background-size: 100% 100%;
+  height: 160px; }
+  @media screen and (max-width: 767px) {
+    #timeline .bottom-space {
+      height: 60px; } }
+
+#timeline .head {
+  margin: 30px 0;
+  margin-bottom: 80px; }
+  @media screen and (max-width: 991px) {
+    #timeline .head {
+      margin-bottom: 20px; } }
+  @media screen and (min-width: 768px) and (max-width: 1366px) {
+    #timeline .head {
+      margin-top: 20px;
+      margin-bottom: 40px; } }
+
+#timeline .day {
+  font-size: 1.4rem;
+  padding: 10px 20px; }
+  @media screen and (max-width: 991px) {
+    #timeline .day {
+      font-size: 1.3rem;
+      padding: 14px 0; } }
+  @media screen and (min-width: 768px) and (max-width: 1366px) {
+    #timeline .day {
+      font-size: 1.3rem;
+      padding: 3px 25px; } }
+
+#social .block {
+  margin-bottom: 30px; }
+
+.font-bold {
+  font-family: 'quarkbold', Roboto, Arial, Tahoma, sans-serif; }
+
+.font-light, body {
+  font-family: 'quarklight', Roboto, Arial, Tahoma, sans-serif; }
+
+html {
+  width: 100%; }
+
+body {
+  font-size: 120%;
+  background: #111;
+  color: #FFF;
+  overflow-x: hidden; }
+  @media screen and (max-width: 767px) {
+    body {
+      font-size: 100%; } }
+  body .bg-parallax {
+    transition: all 1s; }
+
+.modal.in {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0); }
+
+section {
+  padding: 20px 0; }
+  section .title-head, section .title-head-large {
+    text-align: center;
+    font-size: 2rem; }
+    @media screen and (max-width: 767px) {
+      section .title-head, section .title-head-large {
+        font-size: 1.3rem; } }
+  section .title-head-large {
+    font-size: 2.5rem;
+    margin-top: 10px; }
+    @media screen and (max-width: 767px) {
+      section .title-head-large {
+        font-size: 2rem; } }
