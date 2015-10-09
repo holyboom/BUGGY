@@ -1,5 +1,5 @@
 @import './components/navbar';
-@import './components/head';
+@import './components/present';
 @import './components/categories';
 @import './components/sponsor';
 @import './components/guru';
@@ -20,6 +20,7 @@
 
 html {
   width:100%;
+
 }
 
 body {
@@ -31,6 +32,7 @@ body {
   @media screen and (max-width: 767px) {
     font-size: 100%;
   }
+
 
   .bg-parallax {
     transition: all 1s;

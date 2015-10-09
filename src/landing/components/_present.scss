@@ -1,10 +1,26 @@
-#head {
-  padding-top: 40px;
-  background: url('../images/landing/bg/bg-main.png') center center;
-  background-size: cover;
+#present {
+  font-size: 1.7rem;
 
-  .quote {
-    font-size: 1.7rem;
+  .back-present{
+    position: fixed;
+    top: 0;
+    z-index: 0;
+    position: relative;
+  }
+    
+  .font-present{
+    position: absolute;
+    z-index: 1;
+    margin-top: 40%;
+
+    #computer{
+      width: 23%;
+      z-index: 2;
+    }
+
+  }
+
+
     @media screen and (max-width: 767px) {
       font-size: 1rem;
     }
