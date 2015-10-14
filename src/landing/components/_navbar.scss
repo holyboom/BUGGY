@@ -2,9 +2,14 @@ $bgDefault      : rgba(64,64,64,.8);
 $bgHighlight    : rgba(64,64,64,.8);
 $colDefault     : #fbfbfb;
 $colHighlight       : #fbfbfb;
+#slack-top{
+	width: 100%;
+	position: absolute;
+	top: 0;
+}
 .navbar-default {
   background-color: $bgDefault;
-  border-color: $bgHighlight;
+  border-color: $bgHighlight;  
   .navbar-brand {
     color: $colDefault;
     &:hover, &:focus {
@@ -38,6 +43,7 @@ $colHighlight       : #fbfbfb;
     color: $colDefault;
     &:hover {
       color: $colHighlight; }}}
+   
 @media (max-width: 767px) {
   .navbar-default .navbar-nav .open .dropdown-menu {
     > li > a {

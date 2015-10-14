@@ -11,7 +11,8 @@
 @import './components/social';
 //@import './components/youtube';
 
-
+$theme-blue: #0f1f2f;
+$theme-blue2: #70CBCE;
 
 .font-bold {
   font-family: 'quarkbold', Roboto, Arial, Tahoma, sans-serif;
@@ -27,7 +28,7 @@ html {
 
 body {
   font-size: 120%;
-  background: #111;
+  background: #252830;
   color: #FFF;
   overflow-x: hidden;
   @extend .font-light;

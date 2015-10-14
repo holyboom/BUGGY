@@ -1,30 +1,69 @@
 $theme-blue: #0f1f2f;
+$theme-blue2: #70CBCE;
+
+::-webkit-input-placeholder  { font-size: 0.9em; color:#555; } /* Webkit */
+:-moz-placeholder { font-size: 0.9em; color:#555; }  /* Firefox <= 18 */
+::-moz-placeholder { font-size: 0.9em; color:#555; }  /* Firefox >= 19 */
+:-ms-input-placeholder { font-size: 0.9em; color: #555; } /* Internet Explorer */
 
 #present {
   font-size: 1.7rem;
-
+  padding-top: 0 !important;
+  
 
   .back-present{
     width: 100%;
-    height: 550px;
+    height: 769px;
     background-color: #0f1f2f;
-    background-size: cover !important;
     background-repeat: no-repeat !important;
     z-index: 1;
-  
+    position: relative;
+	
    
   }
     
   .font-present{
     position: absolute;
     z-index: 2;
-    top: 100px;
-
+    width: 97%;
+    top: 120px;
+    
     #computer img{
-     
+      width: 60%;
       z-index: 3;
     }
-
+    
+    #show-text {
+	    position: absolute;
+	    right: 30px;
+	    top: 0;
+	    padding-left: 57%;
+	    
+	    img:first-child{
+		    border-bottom: 0.3em solid $theme-blue2;
+		    width: 100%;
+		    
+		    
+	    }
+	    img {
+		    width: 100%;
+	    }
+	    input:focus{
+			outline: 0;}
+			
+	    #search-bar{
+		    background: rgba(217, 219, 227, 0.74);
+		    color: $theme-blue2;
+		    border-color: transparent;
+		    border-radius: 12px;
+		    width: 100%;
+		    height: 1.3em;
+		    text-align: center;
+		    overflow: hidden;
+		    line-height: normal;
+		   
+	    }
+    }
     @media screen and (max-width: 767px) {
       font-size: 1rem;
     }
