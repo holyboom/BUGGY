@@ -1,5 +1,42 @@
-$theme-blue: #0f1f2f;
+$theme-blue: #0f1f2f; 
 $theme-blue2: #70CBCE;
+$theme-blue3: #1e3849;
+$layer-back: 1;
+$layer-font: 2;
+$layer-font-plain: 5;
+$layer-font-com: 6;
+$layer-font-slider: 7;
+
+
+@function color-diff($a, $b) {
+/*
+	$new-hue: hue($a) - hue($b);
+	$adjust-hue: hue($a) + $new-hue;
+*/
+  $sat: saturation($a) - saturation($b);
+  $lig:  lightness($a) -  lightness($b);
+  $fn-sat: if($sat > 0, 'desaturate', 'saturate');
+  $fn-lig: if($lig > 0, 'darken', 'lighten');
+  
+  @return (
+    adjust-hue: (-(hue($a) - hue($b))),
+    #{$fn-sat}: abs($sat),
+    #{$fn-lig}: abs($lig)
+  );}
+
+// @return (color) transformed color
+@function apply-diff($color, $diff) {
+  // We call the $key (function), 
+  // passing the $color and the $value as parameters
+  // e.g. `call(adjust-hue, #BADA55, 42)`
+  @each $key, $value in $diff {
+    $color: call($key, $color, $value);
+  }
+  @return $color;
+}
+
+$diff: color-diff($theme-blue3, $theme-blue2);
+$theme-linear: apply-diff($theme-blue, $diff); 
 
 ::-webkit-input-placeholder  { font-size: 0.9em; color:#555; } /* Webkit */
 :-moz-placeholder { font-size: 0.9em; color:#555; }  /* Firefox <= 18 */
@@ -10,49 +47,49 @@ $theme-blue2: #70CBCE;
   font-size: 1.7rem;
   padding-top: 0 !important;
   
+  .container{
+	  padding: 0;
+  }
 
   .back-present{
     width: 100%;
-    height: 769px;
+    height: 593px;
     background-color: #0f1f2f;
     background-repeat: no-repeat !important;
-    z-index: 1;
+    z-index: $layer-back;  
     position: relative;
-	
-   
+  
   }
     
   .font-present{
     position: absolute;
-    z-index: 2;
+    z-index: $layer-font;
     width: 97%;
     top: 120px;
     
     #computer img{
       width: 60%;
-      z-index: 3;
+      z-index: $layer-font-com;
+      position: relative;
     }
     
     #show-text {
-	    position: absolute;
-	    right: 30px;
+	  	position: absolute;
+	    right: 6%;
 	    top: 0;
-	    padding-left: 57%;
+	    width: 100%;
+	    padding-left: 63%;
 	    
 	    img:first-child{
 		    border-bottom: 0.3em solid $theme-blue2;
 		    width: 100%;
-		    
-		    
-	    }
+		}
 	    img {
-		    width: 100%;
-	    }
+		    width: 100%;}   
 	    input:focus{
 			outline: 0;}
-			
 	    #search-bar{
-		    background: rgba(217, 219, 227, 0.74);
+		    background-color: rgba(217, 219, 227, 0.74); 
 		    color: $theme-blue2;
 		    border-color: transparent;
 		    border-radius: 12px;
@@ -61,9 +98,75 @@ $theme-blue2: #70CBCE;
 		    text-align: center;
 		    overflow: hidden;
 		    line-height: normal;
-		   
-	    }
-    }
+		    cursor: cell;
+		    &:hover{background-color: #000000;}
+		}
+	
+	}
+    
+    .plain{
+	    background-color: $theme-blue2;
+	    width: 100%;
+	    height: 40%;
+	    position: absolute;
+	    top: 90%;
+	    z-index: $layer-font-plain; 
+	}
+	
+	.shadow{
+		position: absolute;
+		top: 15%;
+		width: 60%;
+ 		background:  linear-gradient($theme-blue 70% , $theme-blue3);
+// 		background:  linear-gradient(#000000 0%, #ffffff 100%);
+		height: 85%;
+		transform: skewX(50deg);
+		margin-left: 8%;
+	}
+	
+	#sliderContent li img{
+		width: 100%;
+		padding-right: 3%;
+	}
+
+	#com1 img{
+		cursor: pointer;
+		padding-left: 6%;
+	}
+	
+	.bx-wrapper {
+		top: 8%;
+		position: absolute;
+		z-index: $layer-font-slider;
+		border: 0;
+		background: transparent;
+		box-shadow: 0 0 0;
+		max-width: 51% !important;
+	}
+	
+	.bx-viewport{
+		border: 0;
+		background: transparent;
+		box-shadow: 0 0 0;
+		position: static !important;
+	}
+	
+	.bx-caption{
+/*
+		height: 1.5em;
+		text-align: center;
+*/
+		display: none;
+	}
+	
+	.bx-controls{
+		display: none;
+	}
+	
+	.bx-pager{
+		display: inline;
+	}
+	
     @media screen and (max-width: 767px) {
       font-size: 1rem;
     }

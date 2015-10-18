@@ -5,11 +5,14 @@ html
     meta(name='viewport',content="width=device-width, initial-scale=1")
     link(rel='stylesheet',href='../bower/bootstrap/dist/css/bootstrap.min.css')
     link(rel='stylesheet',href='../bower/reset-css/reset.css')
+    link(rel='stylesheet',href='../bower/jquery.bxslider/jquery.bxslider.css')
     link(rel='stylesheet',href='font/quark.css')
     link(rel='stylesheet',href='landing.css')
   body
     include ./components/navbar.jade
-    include ./components/present.jade 
+    include ./components/present.jade
+    include ./components/newsfeed.jade 
+    include ./components/place.jade   
     include ./components/footer.jade
     
     div.container
@@ -30,4 +33,5 @@ html
     
     script(src='../bower/jquery/dist/jquery.min.js')
     script(src='../bower/bootstrap/dist/js/bootstrap.min.js')
+    script(src='../bower/jquery.bxslider/jquery.bxslider.min.js')
     script(src='landing.js')

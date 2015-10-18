@@ -1,0 +1,37 @@
+$theme-blue: #0f1f2f;
+$theme-blue2: #70CBCE;
+
+#newsfeed {
+  margin-top: 180px;
+
+
+  @media screen and (max-width: 767px) {
+    margin-top: 20px;
+  }
+  .space {
+    margin: 50px 0;
+    @media screen and (max-width: 767px) {
+      margin: 20px 0;
+    }
+  }
+
+  .each {
+    .font-bold { margin: 20px 0 5px; }
+    margin-bottom: 20px;
+    background-color: $theme-blue;
+  }
+
+  .sub-head {
+    margin-bottom: 4px;
+    margin-top: 9px;
+    font-size: 2rem;
+  }
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ }

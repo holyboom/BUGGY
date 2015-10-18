@@ -1,3 +1,9 @@
+$('#sliderContent').bxSlider({ 
+  auto: true,
+  mode: 'horizontal',
+  captions: true
+});
+
 class Resize {
 
   head() {

@@ -4,6 +4,12 @@ var _createClass = (function () { function defineProperties(target, props) { for
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
+$('#sliderContent').bxSlider({
+  auto: true,
+  mode: 'horizontal',
+  captions: true
+});
+
 var Resize = (function () {
   function Resize() {
     _classCallCheck(this, Resize);

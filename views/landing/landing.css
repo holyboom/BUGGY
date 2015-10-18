@@ -4,28 +4,54 @@
   top: 0; }
 
 .navbar-default {
-  background-color: rgba(64, 64, 64, 0.8);
-  border-color: rgba(64, 64, 64, 0.8); }
+  background-color: rgba(2, 1, 2, 0.61);
+  border-color: transparent;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s; }
+  .navbar-default:hover {
+    background-color: rgba(2, 1, 2, 0.9);
+    -moz-transition: all 0.8s;
+    -o-transition: all 0.8s;
+    -webkit-transition: all 0.8s;
+    transition: all 0.8s; }
   .navbar-default .navbar-brand {
     color: #fbfbfb; }
     .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
       color: #fbfbfb; }
   .navbar-default .navbar-text {
     color: #fbfbfb; }
-  .navbar-default .navbar-nav > li > a {
-    color: #fbfbfb; }
-    .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-      color: #fbfbfb; }
-  .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-    color: #fbfbfb;
-    background-color: rgba(64, 64, 64, 0.8); }
-  .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
-    color: #fbfbfb;
-    background-color: rgba(64, 64, 64, 0.8); }
+  .navbar-default .navbar-nav {
+    margin: 1em 2em 0.6em 0;
+    font-size: smaller; }
+    .navbar-default .navbar-nav > li > .register {
+      border: 2px solid #70CBCE;
+      -moz-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      -webkit-transition: all 0.3s;
+      transition: all 0.3s; }
+      .navbar-default .navbar-nav > li > .register:hover {
+        padding-right: 8.5em;
+        -moz-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        -webkit-transition: all 0.5s;
+        transition: all 0.5s; }
+    .navbar-default .navbar-nav > li > a {
+      color: #70CBCE;
+      line-height: 0px; }
+      .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+        color: #fbfbfb; }
+    .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+      color: #fbfbfb;
+      background-color: transparent; }
+    .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+      color: #fbfbfb;
+      background-color: transparent; }
   .navbar-default .navbar-toggle {
-    border-color: rgba(64, 64, 64, 0.8); }
+    border-color: transparent; }
     .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
-      background-color: rgba(64, 64, 64, 0.8); }
+      background-color: transparent; }
     .navbar-default .navbar-toggle .icon-bar {
       background-color: #fbfbfb; }
   .navbar-default .navbar-collapse,
@@ -43,7 +69,7 @@
       color: #fbfbfb; }
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
     color: #fbfbfb;
-    background-color: rgba(64, 64, 64, 0.8); } }
+    background-color: transparent; } }
 
 ::-webkit-input-placeholder {
   font-size: 0.9em;
@@ -68,9 +94,11 @@
 #present {
   font-size: 1.7rem;
   padding-top: 0 !important; }
+  #present .container {
+    padding: 0; }
   #present .back-present {
     width: 100%;
-    height: 769px;
+    height: 593px;
     background-color: #0f1f2f;
     background-repeat: no-repeat !important;
     z-index: 1;
@@ -82,12 +110,14 @@
     top: 120px; }
     #present .font-present #computer img {
       width: 60%;
-      z-index: 3; }
+      z-index: 6;
+      position: relative; }
     #present .font-present #show-text {
       position: absolute;
-      right: 30px;
+      right: 6%;
       top: 0;
-      padding-left: 57%; }
+      width: 100%;
+      padding-left: 63%; }
       #present .font-present #show-text img:first-child {
         border-bottom: 0.3em solid #70CBCE;
         width: 100%; }
@@ -96,7 +126,7 @@
       #present .font-present #show-text input:focus {
         outline: 0; }
       #present .font-present #show-text #search-bar {
-        background: rgba(217, 219, 227, 0.74);
+        background-color: rgba(217, 219, 227, 0.74);
         color: #70CBCE;
         border-color: transparent;
         border-radius: 12px;
@@ -104,7 +134,54 @@
         height: 1.3em;
         text-align: center;
         overflow: hidden;
-        line-height: normal; }
+        line-height: normal;
+        cursor: cell; }
+        #present .font-present #show-text #search-bar:hover {
+          background-color: #000000; }
+    #present .font-present .plain {
+      background-color: #70CBCE;
+      width: 100%;
+      height: 40%;
+      position: absolute;
+      top: 90%;
+      z-index: 5; }
+    #present .font-present .shadow {
+      position: absolute;
+      top: 15%;
+      width: 60%;
+      background: linear-gradient(#0f1f2f 70%, #1e3849);
+      height: 85%;
+      transform: skewX(50deg);
+      margin-left: 8%; }
+    #present .font-present #sliderContent li img {
+      width: 100%;
+      padding-right: 3%; }
+    #present .font-present #com1 img {
+      cursor: pointer;
+      padding-left: 6%; }
+    #present .font-present .bx-wrapper {
+      top: 8%;
+      position: absolute;
+      z-index: 7;
+      border: 0;
+      background: transparent;
+      box-shadow: 0 0 0;
+      max-width: 51% !important; }
+    #present .font-present .bx-viewport {
+      border: 0;
+      background: transparent;
+      box-shadow: 0 0 0;
+      position: static !important; }
+    #present .font-present .bx-caption {
+      /*
+		height: 1.5em;
+		text-align: center;
+*/
+      display: none; }
+    #present .font-present .bx-controls {
+      display: none; }
+    #present .font-present .bx-pager {
+      display: inline; }
     @media screen and (max-width: 767px) {
       #present .font-present {
         font-size: 1rem; } }
@@ -327,43 +404,25 @@
       #whatis .intro-head {
         font-size: 1.4rem; } }
 
-#place {
-  margin-top: 60px; }
+#newsfeed {
+  margin-top: 180px; }
   @media screen and (max-width: 767px) {
-    #place {
+    #newsfeed {
       margin-top: 20px; } }
-  #place .space {
+  #newsfeed .space {
     margin: 50px 0; }
     @media screen and (max-width: 767px) {
-      #place .space {
+      #newsfeed .space {
         margin: 20px 0; } }
-  #place .each {
-    margin-bottom: 20px; }
-    #place .each .font-bold {
+  #newsfeed .each {
+    margin-bottom: 20px;
+    background-color: #0f1f2f; }
+    #newsfeed .each .font-bold {
       margin: 20px 0 5px; }
-  #place .sub-head {
+  #newsfeed .sub-head {
     margin-bottom: 4px;
     margin-top: 9px;
-    font-size: 1.5rem; }
-  #place .map {
-    margin-top: 40px;
-    background: url("../images/landing/place/map.png");
-    position: relative;
-    background-size: cover;
-    background-position: center;
-    transition: all 1s;
-    cursor: pointer; }
-    #place .map .show {
-      width: 100%;
-      height: 100%; }
-    #place .map .btn {
-      opacity: 0;
-      transition: all 0.5s; }
-      @media screen and (max-width: 991px) {
-        #place .map .btn {
-          opacity: 1; } }
-    #place .map:hover .btn {
-      opacity: 1; }
+    font-size: 2rem; }
 
 #qa .begin {
   padding-top: 40px;
