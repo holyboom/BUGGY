@@ -1,3 +1,34 @@
+mixin article(vote,ans,view,title,tags)
+  div.question-summary.narrow#question-summary-0
+                div.cp
+                  div.votes
+                    div.mini-counts
+                      span(title="0 votes")= vote
+                    div.text-vote โหวต
+           
+                  div.status.unanswered
+                    div.mini-counts
+                      span(title="0 answers")= ans
+                    div.text-answer ตอบ
+         
+                  div.views
+                    div.mini-counts
+                      span(title="3 views")= view
+                    div.text-view เข้ามาดู
+                div.summary
+                    h3 
+                       a.question-hyperlink(href="" title="I am trying to load data into mysql from a .dat file.")=title
+                    div.tags.t-mysql.t-sql
+                       a.post-tag(href='/questions/tagged/mysql' title='show questions tagged' rel='tag')=tags
+                       a.post-tag(href='/questions/tagged/mysql' title='show questions tagged' rel='tag') sql
+                    div.started
+                       <i class="fa fa-angle-up"></i> 5
+                       <i class="fa fa-angle-down"></i> 2 
+                       a.started-link(href="") ถาม 
+                          span.relativetime(title="2015-11-02 06:13:30Z") เมื่อ 24:45... by 
+                          a.user-post(href="/users/3733831/user3733831") user3733831 
+                        
+
 section#newsfeed
   div.container
     div.row
@@ -6,7 +37,7 @@ section#newsfeed
         div.sub-head.font-bold /คำถามใหม่
         div.sub-head.font-bold 752
         div 
-      div.col-xs-12.col-sm-6.col-md-3.each
+      div.col-xs-12.col-sm-6.col-md-3.each.selected
         
         div.sub-head.font-bold /คำถามยอดฮิต
         div.sub-head.font-bold 76
@@ -20,14 +51,80 @@ section#newsfeed
         div.sub-head.font-bold /คำถามที่ไร้คำตอบ
         div.sub-head.font-bold 380
        
-    div.space
-    
-    div.row
-      div.col-xs-12
-        div.title-head-large.font-bold สถานที่จัดค่าย
+    div.feed
+      div.q-menu
+        div.sub-head.navbar-left คำถามยอดฮิต
+        div#navbar-collapse.collapse.navbar-collapse
+          ul.nav.navbar-nav.navbar-right
+           li 
+             a.register โพส/วัน
+           li
+             a.detail โพส/สัปดาห์
+           li
+             a.contact โพส/เดือน
+           li
+             a.detail แท็ก
+           li
+             a.contact อันดับ
+            li
+             a.contact
+               <i class="fa fa-plus-circle"></i>
+
+        img#slack-mid(src='../images/landing/present/tab-header.svg')
+
+        div#qlist-wrapper
+          div#question-mini-list
+            div.question-summary.narrow#question-summary-0
+                div.cp
+                  div.votes
+                    div.mini-counts
+                      span(title="0 votes") 989
+                    div.text-vote โหวต
+           
+                  div.status.unanswered
+                    div.mini-counts
+                      span(title="0 answers") 211
+                    div.text-answer ตอบ
+         
+                  div.views
+                    div.mini-counts
+                      span(title="3 views") 814
+                    div.text-view เข้ามาดู
+                div.summary
+                    h3 
+                       a.question-hyperlink(href="" title="I am trying to load data into mysql from a .dat file.") Loading data into mysql from a file on live server
+                    div.tags.t-mysql.t-sql
+                       a.post-tag(href='/questions/tagged/mysql' title='show questions tagged' rel='tag') mysql
+                       a.post-tag(href='/questions/tagged/mysql' title='show questions tagged' rel='tag') sql
+                    div.started
+                        <i class="fa fa-angle-up"></i> 5
+                        <i class="fa fa-angle-down"></i> 2 
+                        a.started-link(href="") ถาม 
+                           span.relativetime(title="2015-11-02 06:13:30Z") เมื่อ 24:45... by 
+                           a.user-post(href="/users/3733831/user3733831") user3733831 
+                           
+            +article(71,189,742,"Deletion of Directory in linux ( can't even ls that directory)","Logic")
+            +article(51,41,514,"Image is saving to cache, but not successfully loading from it","Logic")
+            +article(50,24,440,"Having issues getting @HystrixCommand to work","Logic")
+            +article(47,14,302,"Keep Bootstrap Tooltip visible if you mouse onto the tooltip","Logic")
+            +article(21,8,376,"Problem is with your grand permissions .Try this query in your MYSQl server to grand permission .Replace DB_Name as your database","Logic")
+            +article(51,4,129,"Problem is with your grand permissions .Try this query in your MYSQl server to grand permission .Replace DB_Name as your database","Logic")
+            +article(0,0,3,"Problem is with your grand permissions .Try this query in your MYSQl server to grand permission .Replace DB_Name as your database","Logic")
+            
+        div.more more
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
-  div.map
-    div.shade
-      div.show
-      div.btn
-        img.img-responsive(src='../images/landing/place/show-map.png',width='500')

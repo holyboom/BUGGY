@@ -1,4 +1,4 @@
-nav.navbar.navbar-default.navbar-fixed-top(style='display:none;')
+nav.navbar.navbar-default.navbar-fixed-top
     div.main
     img#slack-top(src='../images/landing/present/tab-header.svg')
     div.navbar-header
@@ -11,12 +11,15 @@ nav.navbar.navbar-default.navbar-fixed-top(style='display:none;')
     div#navbar-collapse.collapse.navbar-collapse
       ul.nav.navbar-nav.navbar-right
         li 
-          a.register(style='cursor:pointer;') Login
+          a.register Login
         li
-          a.detail(style='cursor:pointer;') Register
-        li
-          a.contact(style='cursor:pointer;') facebook
-        li
-          a.contact(style='cursor:pointer;') twitter
-        li
-          a.contact(style='cursor:pointer;') g+
+          a.detail Register
+        li.li-facebook.contact-size
+          a.contact
+            i.fa.fa-facebook
+        li.li-twitter.contact-size
+          a.contact
+            i.fa.fa-twitter
+        li.li-google-plus.contact-size
+          a.contact
+            i.fa.fa-google-plus

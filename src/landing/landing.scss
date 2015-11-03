@@ -13,14 +13,24 @@
 
 $theme-blue: #0f1f2f;
 $theme-blue2: #70CBCE;
-
+$theme-blue3: #1e3849;
+$theme-select: #1F5F76;
+$theme-feed: #193349;
+section {
+    padding: 0 !important;}
+.container{
+	  padding: 0;}
 .font-bold {
   font-family: 'quarkbold', Roboto, Arial, Tahoma, sans-serif;
 }
 .font-light {
   font-family: 'quarklight', Roboto, Arial, Tahoma, sans-serif;
 }
-
+a{
+	color: #fff;
+	cursor:pointer;
+	&:hover{text-decoration: none;}
+}
 html {
   width:100%;
   

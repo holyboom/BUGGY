@@ -10,6 +10,11 @@ $('#sliderContent').bxSlider({
   captions: true
 });
 
+$(".each").click(function () {
+  $(".each").removeClass("selected");
+  $(this).toggleClass("selected");
+});
+
 var Resize = (function () {
   function Resize() {
     _classCallCheck(this, Resize);
@@ -235,7 +240,8 @@ var Scroll = (function () {
   }, {
     key: 'navbar',
     value: function navbar() {
-      var cur = $(window).scrollTop();
+      //var cur = $(window).scrollTop();
+      var cur = $(window);
       var prev = this.prevScroll;
       this.prevScroll = cur;
       var threshold = 5;

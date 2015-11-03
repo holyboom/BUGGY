@@ -5,7 +5,9 @@ $theme-blue2: #70CBCE;
 $bgHighlight    : transparent;
 $colDefault     : #fbfbfb;
 $colHighlight   : #fbfbfb;
-
+$fb-color: #45619D;
+$tw-color: #32CDFD;
+$g-color: #DD4B39;
 @mixin transition($transition...) {
     -moz-transition:    $transition;
     -o-transition:      $transition;
@@ -33,24 +35,54 @@ $colHighlight   : #fbfbfb;
   .navbar-text {
     color: $colDefault; }
   .navbar-nav {
-	 margin: 1em 2em .6em 0;
+	 margin: .8em 6% .4em 0;
 	 font-size: smaller; 
-    > li {
+	 @media screen and (min-width: 1350px) {
+		margin: 1em 11% .6em 0;}
+    > li { 
 	  > .register{
-		 
 	        border: 2px solid $theme-blue2;
+	        padding: 12.5px;
 	        @include transition(all .3s);
 	        &:hover{  
 		        padding-right: 8.5em;
-		        @include transition(all .5s);
-		       
+		        @include transition(all .5s);   
 		    }
         }
       > a {
-        color: $theme-blue2;
-        line-height: 0px;
-        &:hover,  &:focus {
-          color: $colHighlight; }}}
+        	color: $theme-blue2;
+        	font-size: .9em;
+			line-height: 0px; 	
+			&:hover,  &:focus {
+	        	color: $colHighlight;}}
+	  > .contact{
+			padding: 7px 7px;
+			text-align: center;
+			color: #fff;
+		}
+      > .detail{padding-right: 1.0em;}
+      > .fa{line-height: 0;} 
+    }
+    > .contact-size{
+	    width: 1.7rem;
+	    border-radius: 50px;
+	    transition: all .1s;
+	    &:hover,  &:focus, &:active {
+		    animation: pulse 0.2s ease;} 
+	}
+    > .li-facebook{
+	    &:hover,  &:focus, &:active {
+	    background-color: $fb-color;}
+    }
+    > .li-twitter{
+	    &:hover,  &:focus, &:active {
+	    background-color: $tw-color;}
+    }
+    > .li-google-plus{
+	    &:hover,  &:focus, &:active {
+	    background-color: $g-color;}
+    }
+    
     > .active {
       > a, > a:hover, > a:focus {
         color: $colHighlight;

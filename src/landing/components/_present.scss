@@ -43,29 +43,100 @@ $theme-linear: apply-diff($theme-blue, $diff);
 ::-moz-placeholder { font-size: 0.9em; color:#555; }  /* Firefox >= 19 */
 :-ms-input-placeholder { font-size: 0.9em; color: #555; } /* Internet Explorer */
 
+
 #present {
   font-size: 1.7rem;
-  padding-top: 0 !important;
-  
-  .container{
-	  padding: 0;
-  }
 
   .back-present{
     width: 100%;
-    height: 593px;
+    height: 590px;
     background-color: #0f1f2f;
     background-repeat: no-repeat !important;
     z-index: $layer-back;  
     position: relative;
   
   }
+  
+  .plain{
+	    background-color: #70CBCE;
+	    width: 100%;
+	    height: 220px;
+	    position: relative;
+	    /* top: 90%; */
+	    margin-top: -4%;
+	    z-index: 0;
+	    overflow: hidden;
+	    
+	    .shadow{
+			margin-top: 6.1%;
+			width: 60%;
+	 		background:  linear-gradient($theme-blue 55% , $theme-blue3);
+	// 		background:  linear-gradient(#000000 0%, #ffffff 100%);
+			height: 83.8%;
+			transform: skewX(52deg);
+			margin-left: 8%;
+		}
+		
+		.icon-scroll, .icon-scroll:before {
+			position: absolute;
+			left: 50%;
+		}
+		 
+		.icon-scroll {
+			width: 30px;
+			height: 50px;
+			margin-left: -20px;
+			top: 70%;
+			margin-top: -35px;
+			box-shadow: inset 0 0 0 1px $theme-blue2;
+			border-radius: 25px;
+		}
+		 
+		.icon-scroll:before {
+			content: '';
+			width: 8px;
+			height: 8px;
+			background: $theme-blue2;
+			margin-left: -4px;
+			top: 8px;
+			border-radius: 4px;
+			-webkit-animation-duration: 1.5s;
+			animation-duration: 1.5s;
+			-webkit-animation-iteration-count: infinite;
+			animation-iteration-count: infinite;
+			-webkit-animation-name: scroll;
+			animation-name: scroll;
+		}
+	}
+	
+	@-webkit-keyframes scroll {
+		0% {
+		    opacity: 1;
+		}
+		100% {
+		    opacity: 0;
+		    -webkit-transform: translateY(46px);
+		    transform: translateY(26px);
+		}
+	}
+		 
+	@keyframes scroll {
+		0% {
+		    opacity: 1;
+		}
+		100% {
+		    opacity: 0;
+		    -webkit-transform: translateY(46px);
+		    transform: translateY(26px);
+		}
+	}
     
   .font-present{
     position: absolute;
     z-index: $layer-font;
-    width: 97%;
-    top: 120px;
+    width: 100%;
+	top: 105px;
+	
     
     #computer img{
       width: 60%;
@@ -90,7 +161,7 @@ $theme-linear: apply-diff($theme-blue, $diff);
 			outline: 0;}
 	    #search-bar{
 		    background-color: rgba(217, 219, 227, 0.74); 
-		    color: $theme-blue2;
+		    color: $theme-blue;
 		    border-color: transparent;
 		    border-radius: 12px;
 		    width: 100%;
@@ -104,26 +175,6 @@ $theme-linear: apply-diff($theme-blue, $diff);
 	
 	}
     
-    .plain{
-	    background-color: $theme-blue2;
-	    width: 100%;
-	    height: 40%;
-	    position: absolute;
-	    top: 90%;
-	    z-index: $layer-font-plain; 
-	}
-	
-	.shadow{
-		position: absolute;
-		top: 15%;
-		width: 60%;
- 		background:  linear-gradient($theme-blue 70% , $theme-blue3);
-// 		background:  linear-gradient(#000000 0%, #ffffff 100%);
-		height: 85%;
-		transform: skewX(50deg);
-		margin-left: 8%;
-	}
-	
 	#sliderContent li img{
 		width: 100%;
 		padding-right: 3%;
