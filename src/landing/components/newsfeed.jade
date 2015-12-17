@@ -1,4 +1,4 @@
-mixin article(vote,ans,view,title,tags)
+mixin article(vote,ans,view,title,tags,up,down)
   div.question-summary.narrow#question-summary-0
                 div.cp
                   div.votes
@@ -97,8 +97,8 @@ section#newsfeed
                        a.post-tag(href='/questions/tagged/mysql' title='show questions tagged' rel='tag') mysql
                        a.post-tag(href='/questions/tagged/mysql' title='show questions tagged' rel='tag') sql
                     div.started
-                        <i class="fa fa-angle-up"></i> 5
-                        <i class="fa fa-angle-down"></i> 2 
+                        <i class="fa fa-angle-up"></i> 809
+                        <i class="fa fa-angle-down"></i> 180 
                         a.started-link(href="") ถาม 
                            span.relativetime(title="2015-11-02 06:13:30Z") เมื่อ 24:45... by 
                            a.user-post(href="/users/3733831/user3733831") user3733831 
@@ -109,7 +109,10 @@ section#newsfeed
             +article(47,14,302,"Keep Bootstrap Tooltip visible if you mouse onto the tooltip","Logic")
             +article(21,8,376,"Problem is with your grand permissions .Try this query in your MYSQl server to grand permission .Replace DB_Name as your database","Logic")
             +article(51,4,129,"Problem is with your grand permissions .Try this query in your MYSQl server to grand permission .Replace DB_Name as your database","Logic")
-            +article(0,0,3,"Problem is with your grand permissions .Try this query in your MYSQl server to grand permission .Replace DB_Name as your database","Logic")
+            +article(0,0,3,"making go http client work with non-standard http servers","Logic")
+            +article(0,0,3,"making go http client work with non-standard http servers","Logic")
+            +article(0,0,3,"making go http client work with non-standard http servers","Logic")
+            +article(0,0,3,"making go http client work with non-standard http servers","Logic")
             
         div.more more
 

@@ -159,14 +159,14 @@ $color-title: #4674a9;
 		}
 		
 		.narrow .summary {
-		    width: 630px; //530
+		    width: 80%;
 		    padding: 0;
 		    float: left;
 		}
 		
 		.summary {
 		    float: left;
-		    width: 630px;
+		  
 		}
 		
 		.summary h3 {
@@ -201,8 +201,8 @@ $color-title: #4674a9;
 		    display: inline-block;
 		    margin: 2px .4rem 2px 0;
 		    border-radius: 0;
-		    &:hover{color: $theme-select; border-color: $theme-select;}
-
+		    &:hover{color: #fff; border-color: $theme-select;}
+			&:active{color: $theme-select;}
 		    @include transition(color 0.15s ease, background 0.15s ease, border 0.15s ease);
 		}
 		
@@ -218,7 +218,12 @@ $color-title: #4674a9;
 		    float: right;
 		    line-height: 18px;
 		    font-size: .8rem;
+		    @media screen and (max-width: 640px) {
+				display: none;
+    		}
 		}
+		
+		.started-link{color: $theme-blue2;}
 		
 		.fa{
 			color: $theme-blue2;
@@ -242,7 +247,8 @@ $color-title: #4674a9;
 		    padding: .4rem;
 		    text-align: center;
 		    cursor: pointer;
-		    &:hover{color: $theme-select; border-color: $theme-select;}
+		    &:hover{color: #fff; border-color: #fff;}
+		    &:active{border-color: $theme-select;}
 
 		    @include transition(color 0.15s ease, background 0.15s ease, border 0.15s ease);
 		}
@@ -250,7 +256,4 @@ $color-title: #4674a9;
 	}
 }
   
- 
-  
- 
  

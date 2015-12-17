@@ -590,12 +590,11 @@
       padding-top: 4px;
       text-align: center; }
     #newsfeed .feed .narrow .summary {
-      width: 630px;
+      width: 80%;
       padding: 0;
       float: left; }
     #newsfeed .feed .summary {
-      float: left;
-      width: 630px; }
+      float: left; }
     #newsfeed .feed .summary h3 {
       font-size: 15px;
       line-height: 1.4;
@@ -626,8 +625,10 @@
       -webkit-transition: color 0.15s ease, background 0.15s ease, border 0.15s ease;
       transition: color 0.15s ease, background 0.15s ease, border 0.15s ease; }
       #newsfeed .feed .post-tag:hover {
-        color: #1F5F76;
+        color: #fff;
         border-color: #1F5F76; }
+      #newsfeed .feed .post-tag:active {
+        color: #1F5F76; }
     #newsfeed .feed .narrow .started {
       width: auto;
       line-height: inherit;
@@ -638,6 +639,11 @@
       float: right;
       line-height: 18px;
       font-size: .8rem; }
+      @media screen and (max-width: 640px) {
+        #newsfeed .feed .started {
+          display: none; } }
+    #newsfeed .feed .started-link {
+      color: #70CBCE; }
     #newsfeed .feed .fa {
       color: #70CBCE;
       font-weight: bold; }
@@ -665,7 +671,9 @@
       -webkit-transition: color 0.15s ease, background 0.15s ease, border 0.15s ease;
       transition: color 0.15s ease, background 0.15s ease, border 0.15s ease; }
       #newsfeed .feed .more:hover {
-        color: #1F5F76;
+        color: #fff;
+        border-color: #fff; }
+      #newsfeed .feed .more:active {
         border-color: #1F5F76; }
 
 #qa .begin {

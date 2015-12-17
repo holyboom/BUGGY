@@ -12,6 +12,7 @@ var sourcemaps = require('gulp-sourcemaps');
 var runSequence = require('run-sequence');
 var merge2 = require('merge2');
 var symlink = require('gulp-symlink');
+var jadeReact = require('gulp-jade-react');
 
 require('../tasks/bower.js');
 require('../tasks/images.js');
@@ -141,6 +142,41 @@ gulp.task('landing:html',function() {
 
 });
 
+gulp.task('landing:jsx',function() {
+
+  var src = [
+    rootDir + '/**/*.jade',
+    '!' + rootDir + '/components/*.jade'
+  ];
+
+
+
+  var err =  function(e) {
+    console.log('>>> JSX Error ',e);
+  };
+
+  if (isBuild) {
+    gulp.src(src)
+      .pipe(jadeReact())
+      .on('error', err)
+      .pipe(gulp.dest(desDir))
+      .pipe(rename('bundle.jsx'))
+      .pipe(gulp.dest(desDir));
+  } else if (isWatch) {
+    gulp.src(src)
+      .pipe(jadeReact())
+      .on('error', err)
+      .pipe(gulp.dest(desDir))
+      .pipe(browserSync.reload({stream:true}));
+  } else {
+    gulp.src(src)
+      .pipe(jadeReact())
+      .on('error', err)
+      .pipe(gulp.dest(desDir));
+  }
+
+});
+
 gulp.task('landing:build',function() {
   isBuild = true;
   gulp.start('landing:default');
@@ -154,7 +190,8 @@ gulp.task('landing:default', function() {
     [
       'landing:js',
       'landing:css',
-      'landing:html'
+      'landing:html',
+      'landing:jsx'
     ]
   );
 });
@@ -175,5 +212,6 @@ gulp.task('landing:watch',function() {
   gulp.watch([rootDir + '/**/*.es6'],['landing:js']);
   gulp.watch([rootDir + '/**/*.scss'],['landing:css']);
   gulp.watch([rootDir + '/**/*.jade'],['landing:html']);
+  gulp.watch([rootDir + '/**/*.jade'],['landing:jsx']);
 
 });
