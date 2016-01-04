@@ -12,19 +12,24 @@ var sourcemaps = require('gulp-sourcemaps');
 var runSequence = require('run-sequence');
 var merge2 = require('merge2');
 var symlink = require('gulp-symlink');
-var jadeReact = require('gulp-jade-react');
+var React = require('react');
+var Rjade = require('react-jade');
+
+
 
 require('../tasks/bower.js');
 require('../tasks/images.js');
 
 var isWatch = false;
 var isBuild = false;
-var rootDir = './src/landing';
-var desDir = './views/landing';
+var rootDirLanding = './src/landing';
+var desDirLanding = './views/landing';
+var rootDirProfile = './src/profile';
+var desDirProfile = './views/profile';
 
 gulp.task('landing:move',function() {
   var font = gulp.src('src/landing/font/*.*')
-    .pipe(gulp.dest(desDir + '/font'));
+    .pipe(gulp.dest(desDirLanding + '/font'));
 
   gulp.src(['src/bower','src/images','src/errors'])
     .pipe(symlink(['views/bower','views/images','views/errors'], {force: true}));
@@ -35,8 +40,8 @@ gulp.task('landing:move',function() {
 gulp.task('landing:css',function() {
 
   var src = [
-    rootDir + '/**/*.scss',
-    '!' + rootDir + '/components/*.scss'
+    rootDirLanding + '/**/*.scss',
+    '!' + rootDirLanding + '/components/**/*.scss'
   ];
 
   if (isBuild) {
@@ -50,7 +55,7 @@ gulp.task('landing:css',function() {
       .pipe(minifyCss({compatibility: 'ie8'}))
       .pipe(sourcemaps.write())
       .pipe(rename('landing.css'))
-      .pipe(gulp.dest(desDir));
+      .pipe(gulp.dest(desDirLanding));
   } else if (isWatch) {
     gulp.src(src)
       .pipe(
@@ -59,7 +64,7 @@ gulp.task('landing:css',function() {
         }).on('error',sass.logError)
       )
       .pipe(rename('landing.css'))
-      .pipe(gulp.dest(desDir))
+      .pipe(gulp.dest(desDirLanding))
       .pipe(browserSync.reload({stream:true}));
   } else {
     gulp.src(src)
@@ -69,7 +74,7 @@ gulp.task('landing:css',function() {
         }).on('error',sass.logError)
       )
       .pipe(rename('landing.css'))
-      .pipe(gulp.dest(desDir));
+      .pipe(gulp.dest(desDirLanding));
   }
 
 });
@@ -77,7 +82,7 @@ gulp.task('landing:css',function() {
 gulp.task('landing:js',function() {
 
   var src = [
-    rootDir + '/**/*.es6'
+    rootDirLanding + '/**/*.es6'
   ];
 
   var err = function(e) {
@@ -91,18 +96,18 @@ gulp.task('landing:js',function() {
       .pipe(sourcemaps.init())
       .pipe(uglify())
       .pipe(sourcemaps.write())
-      .pipe(gulp.dest(desDir));
+      .pipe(gulp.dest(desDirLanding));
   } else if (isWatch) {
     gulp.src(src)
       .pipe(babelify())
       .on('error', err)
-      .pipe(gulp.dest(desDir))
+      .pipe(gulp.dest(desDirLanding))
       .pipe(browserSync.reload({stream:true}))
   } else {
     gulp.src(src)
       .pipe(babelify())
       .on('error', err)
-      .pipe(gulp.dest(desDir));
+      .pipe(gulp.dest(desDirLanding));
   }
 
 });
@@ -110,8 +115,8 @@ gulp.task('landing:js',function() {
 gulp.task('landing:html',function() {
 
   var src = [
-    rootDir + '/**/*.jade',
-    '!' + rootDir + '/components/*.jade'
+    rootDirLanding + '/**/*.jade',
+    '!' + rootDirLanding + '/components/**/*.jade'
   ];
 
   var err =  function(e) {
@@ -124,57 +129,44 @@ gulp.task('landing:html',function() {
         pretty: true
       }))
       .on('error', err)
-      .pipe(gulp.dest(desDir))
+      .pipe(gulp.dest(desDirLanding))
       .pipe(rename('index.php'))
-      .pipe(gulp.dest(desDir));
+      .pipe(gulp.dest(desDirLanding));
   } else if (isWatch) {
     gulp.src(src)
       .pipe(jade())
       .on('error', err)
-      .pipe(gulp.dest(desDir))
+      .pipe(gulp.dest(desDirLanding))
       .pipe(browserSync.reload({stream:true}));
   } else {
     gulp.src(src)
       .pipe(jade())
       .on('error', err)
-      .pipe(gulp.dest(desDir));
+      .pipe(gulp.dest(desDirLanding));
   }
 
 });
 
 gulp.task('landing:jsx',function() {
 
-  var src = [
-    rootDir + '/**/*.jade',
-    '!' + rootDir + '/components/*.jade'
-  ];
-
-
+  var src = ['!'+rootDirLanding + '/**/*.jade'];
+  
+  var template = Rjade.compileFile(src);
+  gulp.src(src)
+      .pipe(React.render(template({local: 'values'}), document.getElementById('container')))
+      .on('error', err)
+      .pipe(gulp.dest(desDirLanding))
+      .pipe(rename('index.php'))
+      .pipe(gulp.dest(desDirLanding));
+  
 
   var err =  function(e) {
     console.log('>>> JSX Error ',e);
   };
 
-  if (isBuild) {
-    gulp.src(src)
-      .pipe(jadeReact())
-      .on('error', err)
-      .pipe(gulp.dest(desDir))
-      .pipe(rename('bundle.jsx'))
-      .pipe(gulp.dest(desDir));
-  } else if (isWatch) {
-    gulp.src(src)
-      .pipe(jadeReact())
-      .on('error', err)
-      .pipe(gulp.dest(desDir))
-      .pipe(browserSync.reload({stream:true}));
-  } else {
-    gulp.src(src)
-      .pipe(jadeReact())
-      .on('error', err)
-      .pipe(gulp.dest(desDir));
-  }
-
+  console.log(isBuild);
+  console.log(isWatch);
+  
 });
 
 gulp.task('landing:build',function() {
@@ -190,8 +182,8 @@ gulp.task('landing:default', function() {
     [
       'landing:js',
       'landing:css',
-      'landing:html',
-      'landing:jsx'
+      'landing:html'
+     
     ]
   );
 });
@@ -202,6 +194,7 @@ gulp.task('landing:watch',function() {
 
   isWatch = true;
   gulp.start('landing:default');
+  gulp.start('profile');
 
   browserSync.init({
     server : {
@@ -209,9 +202,10 @@ gulp.task('landing:watch',function() {
     }
   });
 
-  gulp.watch([rootDir + '/**/*.es6'],['landing:js']);
-  gulp.watch([rootDir + '/**/*.scss'],['landing:css']);
-  gulp.watch([rootDir + '/**/*.jade'],['landing:html']);
-  gulp.watch([rootDir + '/**/*.jade'],['landing:jsx']);
+  gulp.watch([rootDirLanding + '/**/*.es6'],['landing:js']);
+  gulp.watch([rootDirLanding + '/**/*.scss'],['landing:css']);
+  gulp.watch([rootDirLanding + '/**/*.jade'],['landing:html']);
+  //gulp.watch([rootDirLanding + '/**/*.jade'],['landing:jsx']);
+
 
 });
