@@ -1,5 +1,8 @@
 mixin article(vote,ans,view,title,tags,up,down)
   div.question-summary.narrow#question-summary-0
+                div.bookmark-area
+                  i.fa.fa-bookmark
+                    i.fa.fa-star
                 div.cp
                   div.votes
                     div.mini-counts
@@ -75,6 +78,9 @@ section#newsfeed
         div#qlist-wrapper
           div#question-mini-list
             div.question-summary.narrow#question-summary-0
+                div.bookmark-area
+                  i.fa.fa-bookmark
+                    i.fa.fa-star
                 div.cp
                   div.votes
                     div.mini-counts
@@ -115,6 +121,7 @@ section#newsfeed
             +article(0,0,3,"making go http client work with non-standard http servers","Logic")
             
         div.more more
+img#slack-btm(src='../images/landing/present/tab-header.svg')
 
 
 

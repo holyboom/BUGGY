@@ -11,12 +11,19 @@ $color-title: #4674a9;
     transition:         $transition;
 }
 
+#slack-btm{
+	width: 100%;
+	position: absolute;
+	transform: rotateX(180deg);  
+	margin-top: -7px
+}
+
 #newsfeed {
   margin-top: 0%;
   padding: 0;
 
   @media screen and (max-width: 767px) {
-    margin-top: 20px;
+    // margin-top: 20px;
   }
   .space {
     margin: 50px 0;
@@ -86,6 +93,7 @@ $color-title: #4674a9;
 		}
 		
 	  .question-summary {
+	  	  position: relative;
 		  padding: 12px 0 10px 0;
 		  border-bottom: 1px solid $theme-blue2;
 		  float: left;
@@ -95,6 +103,38 @@ $color-title: #4674a9;
 			  border-bottom: 0px;
 			  padding-bottom: 2.5rem;}
 		}
+
+		.bookmark-area{ 
+			position: absolute;
+    		right: 7%;
+    		top: 0;
+
+			i.fa-bookmark{
+				font-size: 18px;
+				position: relative;
+				color: $theme-blue2;
+				opacity: 0.2;
+			} 
+			i.fa-star{ 
+				z-index: 5;
+				color: $theme-blue3;
+				font-size: 7px;
+				position: absolute;
+				right: 25%;
+				top: 17%;
+			}
+
+			&:hover i.fa-bookmark{
+				color: $theme-blue2;
+				opacity: 1;
+			}
+			&:active i.fa-star{
+				color: white;
+			}
+			
+		}
+
+
 		
 	    .cp {
 		    vertical-align: top;

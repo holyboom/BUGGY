@@ -49,7 +49,7 @@ $theme-linear: apply-diff($theme-blue, $diff);
 
   .back-present{
     width: 100%;
-    height: 590px;
+    height: auto;
     background-color: #0f1f2f;
     background-repeat: no-repeat !important;
     z-index: $layer-back;  
@@ -60,7 +60,7 @@ $theme-linear: apply-diff($theme-blue, $diff);
   .plain{
 	    background-color: #70CBCE;
 	    width: 100%;
-	    height: 220px;
+	    height: 6.5em;
 	    position: relative;
 	    /* top: 90%; */
 	    margin-top: -4%;
@@ -68,13 +68,13 @@ $theme-linear: apply-diff($theme-blue, $diff);
 	    overflow: hidden;
 	    
 	    .shadow{
-			margin-top: 6.1%;
-			width: 60%;
-	 		background:  linear-gradient($theme-blue 55% , $theme-blue3);
-	// 		background:  linear-gradient(#000000 0%, #ffffff 100%);
-			height: 83.8%;
-			transform: skewX(52deg);
-			margin-left: 8%;
+			margin-top: 2%;
+		    width: 60%;
+		    background: linear-gradient(#0f1f2f 55%, #1e3849);
+		    //background:  linear-gradient(#000000 0%, #ffffff 100%);
+		    height: 100%;
+		    transform: skewX(52deg);
+		    margin-left: 60px;		
 		}
 		
 		.icon-scroll, .icon-scroll:before {
@@ -130,35 +130,43 @@ $theme-linear: apply-diff($theme-blue, $diff);
 		    transform: translateY(26px);
 		}
 	}
+
+	.contain-present{
+		padding-top: 10%;
+	}
+
+	@mixin margin8{
+		margin-top: 10%;
+	}
     
-  .font-present{
-    position: absolute;
-    z-index: $layer-font;
-    width: 100%;
-	top: 105px;
+    .font-present{
+   	  z-index: $layer-font;
+      width: 100%;
+
+	  	#computer img{
+     		width: 60%;
+     		z-index: $layer-font-com;
+     		position: relative;
+    	}
+	}
 	
     
-    #computer img{
-      width: 60%;
-      z-index: $layer-font-com;
-      position: relative;
-    }
-    
-    #show-text {
+    #show-text{
 	  	position: absolute;
-	    right: 6%;
-	    top: 0;
-	    width: 100%;
-	    padding-left: 63%;
-	    
+  		left: 57%; 
+   		width: 38%; 	
+	    top: 5%; 
+	    @include margin8;
+
 	    img:first-child{
 		    border-bottom: 0.3em solid $theme-blue2;
-		    width: 100%;
+		    //width: 100%;
 		}
 	    img {
 		    width: 100%;}   
 	    input:focus{
 			outline: 0;}
+
 	    #search-bar{
 		    background-color: rgba(217, 219, 227, 0.74); 
 		    color: $theme-blue;
@@ -172,11 +180,10 @@ $theme-linear: apply-diff($theme-blue, $diff);
 		    cursor: cell;
 		    &:hover{background-color: #000000;}
 		}
-	
 	}
     
 	#sliderContent li img{
-		width: 100%;
+		width: 100% !important;
 		padding-right: 3%;
 	}
 
@@ -193,6 +200,7 @@ $theme-linear: apply-diff($theme-blue, $diff);
 		background: transparent;
 		box-shadow: 0 0 0;
 		max-width: 51% !important;
+		@include margin8;
 	}
 	
 	.bx-viewport{
@@ -221,7 +229,7 @@ $theme-linear: apply-diff($theme-blue, $diff);
     @media screen and (max-width: 767px) {
       font-size: 1rem;
     }
-  }
+  
 
   @keyframes rotating {
     from {

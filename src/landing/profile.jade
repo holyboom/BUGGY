@@ -11,27 +11,15 @@ html
     link(rel='stylesheet',href='font/quark.css')
     link(rel='stylesheet',href='landing.css')
   body
-    include ./components/main/navbar.jade
-    include ./components/profile/present.jade
-    include ./components/profile/newsfeed.jade 
-      
-    include ./components/main/footer.jade
-    
     div.container
       div.row
         div.col-xs-12
-          div#popup-design.modal.fade
-            div.modal-dialog.modal-lg
-              img.img-responsive.center-block(src='../images/landing/categories/design-popup.png')
-          div#popup-programming.modal.fade
-            div.modal-dialog.modal-lg
-              img.img-responsive.center-block(src='../images/landing/categories/programming-popup.png')
-          div#popup-content.modal.fade
-            div.modal-dialog.modal-lg
-              img.img-responsive.center-block(src='../images/landing/categories/content-popup.png')
-          div#popup-marketing.modal.fade
-            div.modal-dialog.modal-lg
-              img.img-responsive.center-block(src='../images/landing/categories/marketing-popup.png')
+          include ./components/main/navbar.jade
+          include ./components/profile/profile_present.jade
+          include ./components/profile/profile_newsfeed.jade 
+            
+          include ./components/main/footer.jade
+    
     
     script(src='../bower/jquery/dist/jquery.min.js')
     script(src='../bower/bootstrap/dist/js/bootstrap.min.js')
