@@ -135,7 +135,7 @@ $theme-linear: apply-diff($theme-blue, $diff);
 		padding-top: 10%;
 	}
 
-	@mixin margin8{
+	@mixin margin-present{
 		margin-top: 10%;
 	}
     
@@ -156,7 +156,7 @@ $theme-linear: apply-diff($theme-blue, $diff);
   		left: 57%; 
    		width: 38%; 	
 	    top: 5%; 
-	    @include margin8;
+	    @include margin-present;
 
 	    img:first-child{
 		    border-bottom: 0.3em solid $theme-blue2;
@@ -180,6 +180,10 @@ $theme-linear: apply-diff($theme-blue, $diff);
 		    cursor: cell;
 		    &:hover{background-color: #000000;}
 		}
+
+		.stat-area{
+			display: inline-block;
+		}
 	}
     
 	#sliderContent li img{
@@ -200,7 +204,7 @@ $theme-linear: apply-diff($theme-blue, $diff);
 		background: transparent;
 		box-shadow: 0 0 0;
 		max-width: 51% !important;
-		@include margin8;
+		@include margin-present;
 	}
 	
 	.bx-viewport{

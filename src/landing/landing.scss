@@ -1,14 +1,16 @@
-@import './components/navbar';
-@import './components/present';
-@import './components/categories';
-@import './components/sponsor';
-@import './components/guru';
-@import './components/whatis';
-@import './components/newsfeed';
-@import './components/qa';
-@import './components/footer';
-@import './components/timeline';
-@import './components/social';
+@import './components/main/navbar';
+@import './components/main/present';
+@import './components/profile/profile_present';
+@import './components/profile/circle';
+@import './components/main/sponsor';
+@import './components/main/whatis';
+@import './components/main/newsfeed';
+@import './components/main/qa';
+@import './components/main/footer';
+@import './components/main/timeline';
+@import './components/main/social';
+
+
 //@import './components/youtube';
 
 $theme-blue: #0f1f2f;

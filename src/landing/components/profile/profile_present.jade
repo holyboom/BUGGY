@@ -1,0 +1,74 @@
+
+section#profile_present
+  div.container
+    div.row
+      div.col-xs-12.wrapper
+        div.back-present.navbar-fixed-top.img-responsive(style="background: #0f1f2f url('../images/landing/present/bg-present.png')")
+          div.contain-present
+            div.font-present
+              div#computer
+                img.img-responsive(src='../images/landing/present/computer.png')
+                div#showprofile
+                  ul#profileContent
+                    li
+                      div#com-leftside
+                        div.avatar
+                        div.name-area
+                          div.online-circle
+                          h1 Holyboom
+                        div.location
+                        div.last-online
+                    li
+                      div#com-rightside
+                        div.sleftext
+                        div.level-area
+                          div.character
+                          p เลเวล: ขุนพล
+                          div.point
+                            p 299 point
+                          div.level-power
+            div.plain
+              div.shadow
+              div.icon-scroll     
+
+            div#show-text
+            
+              input#search-bar(type="text" onkeydown="search()" placeholder="หา Userอื่น..." style="background: rgba(217, 219, 227, 0.74) url('../images/landing/present/search.png') no-repeat scroll 10px 2px; background-size: 6%; background-position-y: center; color: #fff ")
+              div.stat-area
+                ul
+                  li
+                    div.text-ask-area
+                      p.headtext กระทู้ที่ถาม
+                      h1 27
+                  li
+                    div.text-ans-area
+                      p.headtext กระทู้ที่ตอบ
+                      h1 198
+                  li
+                    div.text-vote-area
+                      p.headtext กระทู้ที่โหวต
+                      h1 14k
+
+              div.circle-area
+                ul
+                  li
+                    div.first-area
+                      p.headtext python
+                      include circle.jade
+                      p score 1,200
+                      p posts 421
+                  li
+                    div.second-area
+                      p.headtext C++
+                      include circle2.jade
+                      p score 452
+                      p posts 104
+                  li
+                    div.third-area
+                      p.headtext java
+                      include circle3.jade
+                      p score 98
+                      p posts 25
+
+
+          

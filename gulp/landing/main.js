@@ -14,6 +14,7 @@ var merge2 = require('merge2');
 var symlink = require('gulp-symlink');
 var React = require('react');
 var Rjade = require('react-jade');
+var fs = require('fs');
 
 
 
@@ -24,8 +25,7 @@ var isWatch = false;
 var isBuild = false;
 var rootDirLanding = './src/landing';
 var desDirLanding = './views/landing';
-var rootDirProfile = './src/profile';
-var desDirProfile = './views/profile';
+
 
 gulp.task('landing:move',function() {
   var font = gulp.src('src/landing/font/*.*')
@@ -149,15 +149,12 @@ gulp.task('landing:html',function() {
 
 gulp.task('landing:jsx',function() {
 
-  var src = ['!'+rootDirLanding + '/**/*.jade'];
+  //var src = rootDirLanding + '/components/main/*.jade';
+  var src = rootDirLanding + '/index.jade';
   
   var template = Rjade.compileFile(src);
   gulp.src(src)
-      .pipe(React.render(template({local: 'values'}), document.getElementById('container')))
-      .on('error', err)
-      .pipe(gulp.dest(desDirLanding))
-      .pipe(rename('index.php'))
-      .pipe(gulp.dest(desDirLanding));
+      .pipe(React.render(template({local: 'values'}), document.getElementById('container')));
   
 
   var err =  function(e) {
@@ -194,7 +191,6 @@ gulp.task('landing:watch',function() {
 
   isWatch = true;
   gulp.start('landing:default');
-  gulp.start('profile');
 
   browserSync.init({
     server : {
@@ -205,7 +201,7 @@ gulp.task('landing:watch',function() {
   gulp.watch([rootDirLanding + '/**/*.es6'],['landing:js']);
   gulp.watch([rootDirLanding + '/**/*.scss'],['landing:css']);
   gulp.watch([rootDirLanding + '/**/*.jade'],['landing:html']);
-  //gulp.watch([rootDirLanding + '/**/*.jade'],['landing:jsx']);
+  // gulp.watch([rootDirLanding + '/**/*.jade'],['landing:jsx']);
 
 
 });
