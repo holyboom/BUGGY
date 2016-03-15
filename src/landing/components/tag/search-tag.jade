@@ -1,0 +1,54 @@
+mixin eachtag(s,num)
+  td
+    a(href='/tag/')= s
+    p 80&nbsp;กระทู้
+section#search-tag
+  div.container
+    div.row
+      div.col-xs-12.wrapper
+        div.all-area
+          div.menu-second.question-area-size
+            ul
+              li
+                a หน้าแรก
+              li
+                a แท็ก
+              li
+                a อันดับ
+              li
+                div.user
+                  div.avatar
+                  h1 บัญชีผู้ใช้
+              li
+                i.fa.fa-plus-circle
+          div.tag-area
+            div.head
+              div.symbol
+                i.fa.fa-map-marker
+                h1 แท็ก
+              input
+              div.sort-tag
+                a เรียงตามตัวอักษร
+                a เรียงตามความนิยม
+            div.tag-container
+              table
+                tr
+                  +eachtag("ajax",80)
+                  +eachtag("c",80)
+                  +eachtag("java",80)
+                  +eachtag("python",80)
+                  +eachtag("standard",80)
+                  +eachtag("ajax",80)
+                  +eachtag("ajax",80)
+                  +eachtag("ajax",80)
+                  +eachtag("ajax",80)
+                  +eachtag("ajax",80)
+                  +eachtag("ajax",80)
+                  +eachtag("ajax",80)
+                  +eachtag("ajax",80)
+                  +eachtag("ajax",80)
+                  +eachtag("ajax",80)
+                  +eachtag("ajax",80)
+                  +eachtag("ajax",80)
+            div.next-btn
+        

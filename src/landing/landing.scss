@@ -1,7 +1,5 @@
 @import './components/main/navbar';
 @import './components/main/present';
-@import './components/profile/profile_present';
-@import './components/profile/circle';
 @import './components/main/sponsor';
 @import './components/main/whatis';
 @import './components/main/newsfeed';
@@ -9,6 +7,12 @@
 @import './components/main/footer';
 @import './components/main/timeline';
 @import './components/main/social';
+@import './components/profile/profile_present';
+@import './components/profile/circle';
+@import './components/blog/blog';
+@import './components/blog/suggest';
+@import './components/tag/search-tag';
+
 
 
 //@import './components/youtube';
@@ -18,6 +22,15 @@ $theme-blue2: #70CBCE;
 $theme-blue3: #1e3849;
 $theme-select: #1F5F76;
 $theme-feed: #193349;
+$color-title: #4674a9;
+
+@mixin transition($transition...) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
+
 section {
     padding: 0 !important;}
 .container{
@@ -28,6 +41,24 @@ section {
 .font-light {
   font-family: 'quarklight', Roboto, Arial, Tahoma, sans-serif;
 }
+.clear-all{
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.clearfix{height: 1%;}
+
+.btn-reset{
+  background: transparent;
+  border: 0px;
+  font-size: 100%;
+  &:hover a{
+    color: inherit;
+  }
+}
+
 a{
 	color: #fff;
 	cursor:pointer;
@@ -47,8 +78,6 @@ body {
   @media screen and (max-width: 767px) {
     font-size: 100%;
   }
-
-
   .bg-parallax {
     transition: all 1s;
   }

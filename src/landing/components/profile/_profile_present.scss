@@ -43,6 +43,15 @@ $theme-linear: apply-diff($theme-blue, $diff);
 ::-moz-placeholder { font-size: 0.9em; color:#555; }  /* Firefox >= 19 */
 :-ms-input-placeholder { font-size: 0.9em; color: #555; } /* Internet Explorer */
 
+@mixin center-content{
+	display: flex;
+	text-align: center;
+    justify-content: space-around;
+}
+
+@mixin font-head-stat-text{
+	font-size: 0.8em;
+}
 
 #profile_present {
   font-size: 1.7rem;
@@ -160,29 +169,100 @@ $theme-linear: apply-diff($theme-blue, $diff);
 		    z-index: 9;
 		    margin: 6% 0 0 4%;
 
+		    #profileContent{ display: flex;}
+		    #profileContent li{ margin: auto;}
 
 
 
 		    #com-leftside{ 
-		    	text-align: center;
+		    	text-align: left;
 		    	float: left;
+		    	.small{
+		    		font-size: .6em;
+		    		margin: 4px 0;
+		    	}
 		    	.avatar{ 
-
+		    		border: solid .15em rgba($theme-blue2,.7);
 		    		width: 170px;
 		    		height: 170px;
 		    		background: url('../images/landing/present/avatar.jpg') no-repeat ;
 		    		background-size: cover;
 		    		border-radius: 50%;
-		    		
+		    	}
+
+		    	@mixin margin-symbol{margin-right: 5%;}
+		    	.name-area{
+		    		display: flex;
+		    		padding-top: 11%;
+
+		    		.online-circle{
+		    			width: 15px;
+		    			height: 15px;
+		    			border-radius: 50%;
+		    			background-color: $theme-blue2;		    			
+		    			vertical-align: middle;
+		    			@include margin-symbol;
+		    		}
+		    		.name {		    			
+		    			h1{
+		    				color: $theme-blue2; 
+		    				font-weight: bolder;
+		    			}
+		    		}
+		    	}
+
+		    	.location, .last-online{
+		    		display: flex;
 
 		    	}
 
+		    	.fa{
+		    		font-size: .7em;
+		    		@include margin-symbol;
+		    	}
 		    }
 
 		    #com-rightside{ 
 		    	float: right;
+		    	margin-left: 13px;
+		    	width: 350px;
 
-		    	text-align: center;
+		    	.self-text{
+		    		width: 100%;
+		    		height: 100px;
+		    		background-color: rgba(#d7d7d7,0.8);
+		    		border-radius: 5%;
+
+		    		p{
+		    			position: absolute;
+		    			font-size: .7em;
+		    			top: 0;
+		    			margin: 2% 2%;
+		    			color: #000;
+		    		}
+		    	}
+		    	.level-area{		    		
+		    		display: flex;
+		    		padding-top: 10%;
+			    	.character{
+			    		width: 28%;
+   						height: 8em;
+						background: url('../images/landing/present/level_5.svg') no-repeat;
+						background-size: cover;
+					}
+					.level-detail{
+						float: left;
+						padding-left: 5%;
+						.text p{color: $theme-blue2;}
+						.point p{font-size: 1.5em; padding-top: 4%;}
+						.level-power{ 
+							width: 130%;
+							height: 1em;
+							border: solid 1px #fff;
+							border-radius: 20px;
+						}
+					}
+				}
 		    }
     	}   	
 	}
@@ -220,16 +300,6 @@ $theme-linear: apply-diff($theme-blue, $diff);
 		    &:hover{background-color: #000000;}
 		}
 
-		@mixin center-content{
-			display: flex;
-	  	    text-align: center;
-		    justify-content: space-around;
-		}
-
-		@mixin font-head-stat-text{
-			font-size: 0.8em;
-		}
-
 		.stat-area{
 			margin-top: 22px;
 
@@ -244,7 +314,6 @@ $theme-linear: apply-diff($theme-blue, $diff);
 					margin-top: 13px;
 				}
 			}
-
 		}
 
 		.circle-area {
@@ -254,13 +323,7 @@ $theme-linear: apply-diff($theme-blue, $diff);
 				.headtext{@include font-head-stat-text;}
 				p{font-size: .7em;}
 			}
-		}
-
-		.charactor{
-			background: url('../imaages/landing/present/level_2.svg') no-repeat;
-			background-size: 100% 100%;
-		}
-			
+		}		
 	}
     
 	#sliderContent li img{

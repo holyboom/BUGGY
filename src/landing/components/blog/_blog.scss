@@ -1,0 +1,229 @@
+$theme-blue: #0f1f2f;
+$theme-blue2: #70CBCE;
+$theme-select: #1F5F76;
+$theme-feed: #193349;
+$color-title: #4674a9;
+
+@mixin transition($transition...) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
+
+#blog {
+  .container{background: $theme-blue url('../images/landing/present/bg-present.png');}
+  button{background: transparent; border: 0px;}
+  @media screen and (max-width: 767px) {
+    margin-top: 20px;
+  }
+  .float-left{float: left;}
+  .float-right{float: right;}
+
+  .head-text{
+    padding: 3% 0 3% 3%;
+    display: flex;
+    color: $theme-blue2;
+    vertical-align: middle;
+    font-size: 1.2em;
+    .line-decor{border-top: 2px solid $theme-blue2;}
+  }
+
+  @mixin margin-blog-and-suggest($UD,$LR){
+    margin: $UD+% $LR+%;
+  }
+
+  @mixin font-text-content(){
+    font-size: .9em;
+  }
+
+  @mixin abox($color,$a){
+    padding: 2% 5%;
+    background-color: rgba($color,$a);
+    border-radius: 15px;
+    .qnumber{
+          padding: 2% 0 3% 0;
+          color: $theme-blue2;
+    }
+    .text-content{@include font-text-content();}
+    .btn-reply{
+      padding-left: 0;
+      font-size: 100%;
+      color: $theme-blue2;
+    }
+
+    .pick-best-btn{
+      display: flex;
+      font-size: 70%;
+      p{color: $theme-blue2;}
+      .fa-star{
+        padding-right: 4%;
+        opacity: .5;    
+      }
+      &:active .fa-star{opacity: .2;}   
+    }
+    .selected{
+      .fa-star{
+        color: #F9F969;
+        opacity: 1;
+      }
+    }
+
+  }
+  @mixin paste-btm-question{
+    margin-top: 4%;
+    display: flex;
+    .reply p{font-size: .5em;}
+    .right-area{
+      float: right;
+      display: flex;
+
+      .vote-area{
+        padding: 2% 0;
+        display: flex;  
+        border-right: 1px solid $theme-blue2;
+
+        i{
+          color: $theme-blue2;
+          font-size: 1.3em;
+          padding-right: 3%;
+        }
+        h1{
+          padding-right: 10%;
+          font-size: .9em;
+        }
+      }
+      .user-area{
+        display: flex;
+        padding-left: 4%;
+
+        .avatar{
+          width: 95px;
+         // height: 50px;
+          border-radius: 50px;
+          background: url('../images/landing/present/avatar.jpg') no-repeat;
+          background-size: contain;
+          margin-right: 5%;
+        }
+        .user-deatil{
+          color: $theme-blue2;   
+          margin-right: 7%;   
+          .username h1{
+            letter-spacing: .05em;
+            font-size: .9em;
+            margin-bottom: 2%;
+            opacity: .8;
+          }
+          .time-post p{
+            font-size: .7em;
+          }        
+        }
+        .user-character{
+            width: 100%;         
+            background: url('../images/landing/present/level_5.svg') no-repeat;
+            background-size: contain;
+            font-weight: 9000;
+        }
+      }
+    }
+
+    // div.user-area
+    //   div.avatar
+    //   div.user-deatil
+    //     div.username
+    //     div.time-post
+    //   div.user-character
+  }
+
+  .all-area{
+    @include margin-blog-and-suggest(13,3);
+  }
+  .all-suggest-area{
+    @include margin-blog-and-suggest(5,3);
+  }
+  
+  .menu-second{
+    margin-bottom: 3%;
+    ul{
+      li{
+        margin: 0 1.5%;
+      }
+      display: flex;
+    }
+  }
+  .question-area{
+    .ask-area{
+      @include abox($theme-feed,1);      
+
+      .top-container{
+        display: flex;
+        h1{
+          color: $theme-blue2;
+          font-size: 1.7em;
+          font-weight: bolder;
+        }
+        .receive{
+
+        }
+      }
+
+      .tags-area{
+        opacity: .8;
+        ul{
+          padding: 2.5% 0 5% 0;
+          display: flex;
+          li{margin-right: 1.2%;}
+        }
+       
+        a {
+          border: 2px solid #d7d7d7;
+          padding: 1% 10%;
+          font-size: .9em;
+        }
+      }
+
+      .text-content{@include font-text-content();}
+      .btm-question{@include paste-btm-question} 
+    }
+    .selected-ans-area{
+      .head-text{
+        .fa-star{
+          margin-right: 1%;
+          font-size: .7em;
+        }
+      }
+      .selected-ans{
+        @include abox($theme-select,1); 
+        border: .2em solid $theme-blue2;        
+        .btm-question{@include paste-btm-question}
+      }
+    }
+    .all-ans-area{
+      .ans-plus-reply{
+        padding-bottom: 3%;
+        .ans-row{    
+          .answer{
+            @include abox($theme-select,.75);
+            .btm-question{@include paste-btm-question}
+          }
+        }
+        .selected{
+          .answer{background-color: $theme-select;}
+        }
+      
+
+        
+
+        .reply-row{
+          
+          @include transition(all .8s);
+          margin-top: 2%;
+          padding-bottom: 5%;
+          width: 70%;
+          @include abox($theme-select + #000109, .55);
+          .btm-question{@include paste-btm-question}
+        }
+      }
+    }
+  }
+ }

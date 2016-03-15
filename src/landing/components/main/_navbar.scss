@@ -15,6 +15,56 @@ $g-color: #DD4B39;
     transition:         $transition;
 }
 
+.display-non{display: none !important;}
+.reset-line-a{
+  line-height: 0 !important;
+}
+.toptop{
+  .btn{
+    background: transparent;
+    border: 0;
+    a{color: $theme-blue2;
+      &:hover{color: #fff;}}
+  }
+}
+
+.modal-dialog{
+  .modal-content{
+    //background: $theme-blue url('../images/landing/present/bg-present.png');
+    //background-color: $theme-blue;
+    //border: 2px solid $theme-blue;
+    label{color: $theme-blue;}
+    input{width: 50%;}
+
+  }
+}
+
+#show-noti{
+  width: 25%;
+  position: fixed;
+  right: -25%;
+  z-index: 99;
+  height: 100%;
+  background-color: #000;
+  opacity: 0;
+  overflow: scroll;
+  @include transition(all .7s);
+  .noti-area{
+    margin-top: 20%;
+    ul{
+      li{
+        padding: 10% 0;
+        text-align: center;
+        border-bottom: 1px solid $theme-blue2;
+      }
+    }
+  }
+}
+#show-noti.selected{
+  right: 0;
+  opacity: 1;
+}
+
 #slack-top{
 	width: 100%;
 	position: absolute;
@@ -35,53 +85,114 @@ $g-color: #DD4B39;
   .navbar-text {
     color: $colDefault; }
   .navbar-nav {
-	 margin: .8em 6% .4em 0;
+	 margin: .8em 6% .2em 0;
 	 font-size: smaller; 
 	 @media screen and (min-width: 1350px) {
 		margin: 1em 11% .6em 0;}
     > li { 
-	  > .register{
+	    > .login-btn{
+          background-color: rgba(#000,.85) !important;
 	        border: 2px solid $theme-blue2;
-	        padding: 12.5px;
+	        padding: 4.5px 8px;
+          position: absolute;
+          right: 0;
+
 	        @include transition(all .3s);
-	        &:hover{  
-		        padding-right: 8.5em;
-		        @include transition(all .5s);   
-		    }
+          &:hover{
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;}
+	        &:hover a{color: $theme-blue2;}
+          &:hover ul{
+            max-height: 300px;
+            @include transition(all 1.3s);
+            
+          }
         }
+        .reset-line-a{
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+        .tag-btn{padding-left: 18px !important;}
       > a {
         	color: $theme-blue2;
         	font-size: .9em;
-			line-height: 0px; 	
-			&:hover,  &:focus {
-	        	color: $colHighlight;}}
-	  > .contact{
-			padding: 7px 7px;
-			text-align: center;
-			color: #fff;
-		}
+			
+			    &:hover,  &:focus{
+	        	color: $colHighlight;
+          }
+        }
+      .user-area{
+        display: flex;
+        align-items: center;
+        .avatar{
+          background: url('../images/landing/present/avatar.jpg') no-repeat;
+          width: 30px;
+          height: 30px;
+          border-radius: 50px;
+          background-size: contain;
+        }
+        a{
+            font-size: .8em; 
+            opacity: .8;
+            padding:0 11% 0 4%;
+            &:hover{opacity: 1; color: #fff;}
+          }
+      }
+      i.fa-bell-o{
+        margin: 8% 0% 0 0;
+        font-size: 1em;
+        color: $theme-blue2;
+        border-radius: 50px;
+        border: 1px solid $theme-blue2;
+        padding: 3px;
+        cursor: pointer;
+
+      }
+      ul {
+        overflow: hidden;
+        max-height: 0px;
+        @include transition(all .3s);  
+        li{
+          padding: 14% 0;
+          text-align: center;
+          &:first-child{margin-top: 15px;}
+          i{
+            margin-top: 12%;
+            &:hover{color: #fff; @include transition(all 0s);}
+
+          }
+        }
+        > .contact-size{
+            vertical-align: middle;
+            border-radius: 20px;
+            transition: all .1s;
+            &:hover,  &:focus, &:active {
+              animation: pulse 0.2s ease;} 
+          }
+        > .li-facebook{
+            border-radius: 15px !important;
+            &:hover,  &:focus, &:active {
+            background-color: $fb-color;}
+          }
+        > .li-twitter{
+          &:hover,  &:focus, &:active {
+            background-color: $tw-color;}
+          }
+        > .li-google-plus{
+          &:hover,  &:focus, &:active {
+            background-color: $g-color;}
+          }     
+      }
+  	  > .contact{
+  			padding: 7px 7px;
+  			text-align: center;
+  			color: #fff;
+  		}
       > .detail{padding-right: 1.0em;}
       > .fa{line-height: 0;} 
     }
-    > .contact-size{
-	    width: 1.7rem;
-	    border-radius: 50px;
-	    transition: all .1s;
-	    &:hover,  &:focus, &:active {
-		    animation: pulse 0.2s ease;} 
-	}
-    > .li-facebook{
-	    &:hover,  &:focus, &:active {
-	    background-color: $fb-color;}
-    }
-    > .li-twitter{
-	    &:hover,  &:focus, &:active {
-	    background-color: $tw-color;}
-    }
-    > .li-google-plus{
-	    &:hover,  &:focus, &:active {
-	    background-color: $g-color;}
-    }
+
+   
     
     > .active {
       > a, > a:hover, > a:focus {

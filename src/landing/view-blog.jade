@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+    | <base href='<?= base_url() ?>views/landing/' target='_blank'>
+    meta(name='viewport',content="width=device-width, initial-scale=1",charset="UTF-8")
+    link(rel='stylesheet',href='../bower/bootstrap/dist/css/bootstrap.min.css')
+    link(rel='stylesheet',href='../bower/reset-css/reset.css')
+    link(rel='stylesheet',href='../bower/jquery.bxslider/jquery.bxslider.css')
+    link(rel='stylesheet',href='../bower/animate/animate.css')
+    link(rel='stylesheet',href='../bower/font-awesome/css/font-awesome.min.css')
+    link(rel='stylesheet',href='font/quark.css')
+    link(rel='stylesheet',href='landing.css')
+  body
+    div.container
+      div.row
+        div.col-xs-12
+          include ./components/main/navbar.jade
+          include ./components/blog/blog.jade
+          
+            
+          include ./components/main/footer.jade
+    
+    
+    script(src='../bower/jquery/dist/jquery.min.js')
+    script(src='../bower/bootstrap/dist/js/bootstrap.min.js')
+    script(src='../bower/jquery.bxslider/jquery.bxslider.min.js')
+    script(src='landing.js')

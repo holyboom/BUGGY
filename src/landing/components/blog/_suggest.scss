@@ -1,0 +1,37 @@
+#suggest{
+  border: 1px solid $theme-blue2;
+  border-radius: 15px;
+  .suggest-area{
+    .head-text{
+      padding: 2% 2%;
+      border-bottom: 1px solid $theme-blue2;
+      i{
+        font-size: .8em;
+        padding-right: 1%;
+      }
+    }
+    .all-suggest{
+      
+      .each-suggest{
+        position: relative;
+        padding: 2% 2%;
+        border-bottom: 1px solid $theme-blue2;
+        cursor: pointer;
+        &:last-child{border-bottom: 0px;}
+        &:hover{background-color: rgba($theme-blue2,.1);}
+      }
+      .already-get{
+        display: flex;
+        position: absolute;
+        top: 35%;
+        right: 2%;
+        i{
+          color: $theme-blue2;
+          padding-right: 6%;
+          font-size: .9em;
+        }
+      }
+    }
+  }
+
+ }

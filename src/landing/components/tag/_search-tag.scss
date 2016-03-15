@@ -1,0 +1,110 @@
+#search-tag {
+  .container{ background: $theme-blue +#001010 url('../images/landing/present/bg-present.png');}
+
+  @media screen and (max-width: 767px) {
+    margin-top: 20px;
+  }
+  .float-left{float: left;}
+  .float-right{float: right;}
+
+  .head-text{
+    padding: 3% 0 3% 3%;
+    display: flex;
+    color: $theme-blue2;
+    vertical-align: middle;
+    font-size: 1.2em;
+    .line-decor{border-top: 2px solid $theme-blue2;}
+  }
+
+  .all-area{
+    margin: 15% 4%;
+    .menu-second{
+      margin-bottom: 3%;
+      ul{
+        li{margin: 0 1.5%;}
+        display: flex;
+      }
+    }  
+  }
+ 
+  .tag-area{
+    border-radius: 20px;
+    border: 1.5px solid $theme-blue2;
+    color: $theme-blue2;
+    @media screen and (max-width: 767px) {    
+      text-align: center;
+      }
+    .head{
+      display: flex;
+      padding: 1.5% 3% 1% 3%;
+      border-bottom: 1.5px solid $theme-blue2;
+      @media screen and (max-width: 767px) {
+          display: block;
+          text-align: center;
+          
+      }
+
+      .symbol{
+        display: flex;
+        i{
+          font-size: 1.5em;
+          padding-right: 15%;
+        }
+      }
+      .sort-tag{
+        display: flex;
+        position: absolute;
+        right: 10%;
+        @media screen and (max-width: 767px) {
+          position: static;
+          right: 0;
+          text-align: center;
+      }
+
+        a{
+          padding: 2% 2%;
+          color: $theme-blue2;
+          font-size: 1.1em;
+          font-weight: bold;
+          &:first-child{
+            border-right: 1px solid $theme-blue2;
+          }
+        }
+        
+      }
+    }
+    .tag-container{
+      table{
+        tr{
+          display: block; 
+          margin: 4% 1%;
+          td{
+            text-align: center;
+            display: inline-flex;
+            padding: 1.5%;
+            margin: 0 2%;
+            width: 20%;
+            a{
+
+              border: 1px solid #d7d7d7;
+              box-shadow: 1px 0px 5px #d7d7d7;
+              padding: 2% 8%;
+              margin-right: 20%;
+              &:hover{color: #fff;}
+                
+            }
+            p{
+              margin: auto 0;
+              padding-right: 10%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+

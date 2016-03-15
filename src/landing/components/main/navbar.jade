@@ -1,4 +1,4 @@
-nav.navbar.navbar-default.navbar-fixed-top
+nav.navbar.navbar-default.navbar-fixed-top.toptop
     div.main
     img#slack-top(src='../images/landing/present/tab-header.svg')
     div.navbar-header
@@ -10,10 +10,33 @@ nav.navbar.navbar-default.navbar-fixed-top
     
     div#navbar-collapse.collapse.navbar-collapse
       ul.nav.navbar-nav.navbar-right
-        li 
-          a.register(href='../../landing/profile.html',target='_blank') Login
+        li         
+          a.login-btn(href='../../landing/profile.html',target='_blank') Login
+            ul
+              li.li-facebook.contact-size
+                i.fa.fa-facebook
+              li.li-twitter.contact-size 
+                i.fa.fa-twitter
+              li.li-google-plus.contact-size 
+                i.fa.fa-google-plus
+              li.li-linkedin.contact-size 
+                i.fa.fa-linkedin
+              li.li-github.contact-size 
+                i.fa.fa-github
         li
-          a.detail(href="") Register
+          button.btn.btn-primary(type="button" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo")
+            a.detail Register
+        li.display-non
+          div.user-area
+            div.avatar
+            a holyboom
+        li
+          div
+            i.fa.fa-bell-o
+        li
+          a.reset-line-a.tag-btn แท็ก
+        li
+          a.reset-line-a อันดับ
         li.li-facebook.contact-size
           a.contact
             i.fa.fa-facebook
@@ -23,3 +46,67 @@ nav.navbar.navbar-default.navbar-fixed-top
         li.li-google-plus.contact-size
           a.contact
             i.fa.fa-google-plus
+
+#show-noti
+  div.noti-area
+    ul
+      li
+        a Piyapat เพิ่งตอบความเห็นของคุณ
+      li
+        a Piyapat เพิ่งตอบความเห็นของคุณ
+      li
+        a Piyapat เพิ่งตอบความเห็นของคุณ
+      li
+        a Piyapat เพิ่งตอบความเห็นของคุณ
+      li
+        a Piyapat เพิ่งตอบความเห็นของคุณ
+      li
+        a Piyapat เพิ่งตอบความเห็นของคุณ
+      li
+        a Piyapat เพิ่งตอบความเห็นของคุณ
+      li
+        a Piyapat เพิ่งตอบความเห็นของคุณ
+      li
+        a Piyapat เพิ่งตอบความเห็นของคุณ
+      li
+        a Piyapat เพิ่งตอบความเห็นของคุณ
+      li
+        a Piyapat เพิ่งตอบความเห็นของคุณ
+      li
+        a Piyapat เพิ่งตอบความเห็นของคุณ
+
+
+#exampleModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalLabel')
+      .modal-dialog(role='document')
+        .modal-content
+          .modal-header
+            button.close(type='button', data-dismiss='modal', aria-label='Close')
+              span(aria-hidden='true') ×
+            h4#exampleModalLabel.modal-title Register
+          .modal-body
+            form
+              .form-group
+                label.control-label(for='username') Username:
+                input#username.form-control(type='text')
+              .form-group
+                label.control-label(for='password') Password:
+                input#password.form-control(type='text')
+              .form-group
+                label.control-label(for='con-password') Confirm Password:
+                input#con-password.form-control(type='text')
+              .form-group
+                label.control-label(for='password') Email Address:
+                input#email.form-control(type='text')
+              .form-group
+                label.control-label(for='message-text') Message:
+                textarea#message-text.form-control
+          .modal-footer
+            button.btn.btn-default(type='button', data-dismiss='modal') Close
+            button.btn.btn-primary(type='button') Next
+
+
+
+
+
+
+
