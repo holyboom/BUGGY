@@ -9,74 +9,76 @@ section#profile_present
               div#computer
                 img.img-responsive(src='../images/landing/present/computer.png')
                 div#showprofile
-                  ul#profileContent
-                    li
-                      div#com-leftside
-                        div.avatar
-                        div.name-area
-                          div.online-circle
-                          div.name
-                            h1 Holyboom
-                        div.location
-                          i.fa.fa-map-marker
-                          p.small Bangkok, Thailand
-                        div.last-online
-                          i.fa.fa-clock-o
-                          p.small 35 minutes ago
-                    li
-                      div#com-rightside
-                        div.self-text
-                          p เล่ามาตั้งนาน มาดูวิธีการเขียนโค้ดของ React กันดีกว่าครับ ก่อนอื่นเราจะต้องเข้าใจก่อนว่า แนวคิดของ React นั้นก็คือ การมองทุกสิ่งทุกอย่างบนหน้าเว็บเป็น ...
-                        div.level-area
-                          div.character
-                          div.level-detail
-                            div.text
-                              p เลเวล: เซียนเทพ
-                            div.point
-                              p 299 points
-                            div.level-power
+                  div.container
+                    ul#profileContent
+                      li
+                        div#com-leftside
+                        
+                          img.avatar(src='../images/landing/present/avatar.jpg')
+                          div.name-area
+                            div.online-circle
+                            div.name
+                              h1 Holyboom
+                          div.location
+                            i.fa.fa-map-marker
+                            p.small กรุงเทพ, ประเทษไทย
+                          div.last-online
+                            i.fa.fa-clock-o
+                            p.small 35 นาทีที่แล้ว
+                      li
+                        div#com-rightside
+                          div.self-text
+                            p เล่ามาตั้งนาน มาดูวิธีการเขียนโค้ดของ React กันดีกว่าครับ ก่อนอื่นเราจะต้องเข้าใจก่อนว่า แนวคิดของ React นั้นก็คือ การมองทุกสิ่งทุกอย่างบนหน้าเว็บเป็น ...
+                          div.level-area
+                            img.character(src='../images/landing/present/level_5.svg')
+                            div.level-detail
+                              div.text
+                                p เลเวล: เซียนเทพ
+                              div.point
+                                p 299 คะแนน
+                              div.level-power
             div.plain
               div.shadow
               div.icon-scroll     
 
             div#show-text
-            
-              input#search-bar(type="text" onkeydown="search()" placeholder="หา Userอื่น..." style="background: rgba(217, 219, 227, 0.74) url('../images/landing/present/search.png') no-repeat scroll 10px 2px; background-size: 6%; background-position-y: center; color: #fff ")
-              div.stat-area
-                ul
-                  li
-                    div.text-ask-area
-                      p.headtext กระทู้ที่ถาม
-                      h1 27
-                  li
-                    div.text-ans-area
-                      p.headtext กระทู้ที่ตอบ
-                      h1 198
-                  li
-                    div.text-vote-area
-                      p.headtext กระทู้ที่โหวต
-                      h1 14k
+              div.relative
+                input#search-bar(type="text" onkeydown="search()" placeholder="หา Userอื่น..." style="background: rgba(217, 219, 227, 0.74) url('../images/landing/present/search.png') no-repeat scroll 10px 2px; background-size: 6%; background-position-y: center; color: #fff ")
+                div.stat-area
+                  ul
+                    li
+                      div.text-ask-area
+                        p.headtext กระทู้ที่ถาม
+                        h1 27
+                    li
+                      div.text-ans-area
+                        p.headtext กระทู้ที่ตอบ
+                        h1 198
+                    li
+                      div.text-vote-area
+                        p.headtext กระทู้ที่โหวต
+                        h1 14k
 
-              div.circle-area
-                ul
-                  li
-                    div.first-area
-                      p.headtext python
-                      include circle.jade
-                      p score 1,200
-                      p posts 421
-                  li
-                    div.second-area
-                      p.headtext C++
-                      include circle2.jade
-                      p score 452
-                      p posts 104
-                  li
-                    div.third-area
-                      p.headtext java
-                      include circle3.jade
-                      p score 98
-                      p posts 25
+                div.circle-area
+                  ul
+                    li
+                      div.first-area
+                        p.headtext python
+                        include circle.jade
+                        p 1,200 คะแนน
+                        p 421 กระทู้
+                    li
+                      div.second-area
+                        p.headtext C++
+                        include circle2.jade
+                        p 452 คะแนน
+                        p 104 กระทู้
+                    li
+                      div.third-area
+                        p.headtext java
+                        include circle3.jade
+                        p 98 คะแนน
+                        p 25 กระทู้
 
 
           

@@ -140,12 +140,18 @@ $theme-linear: apply-diff($theme-blue, $diff);
 		}
 	}
 
+	@mixin margin-present{
+		margin-top: 10%;
+	}
+
 	.contain-present{
 		padding-top: 10%;
 	}
 
-	@mixin margin-present{
-		margin-top: 10%;
+
+	.small{
+		font-size: .6em;
+		margin: 4px 0;
 	}
     
     .font-present{
@@ -169,101 +175,106 @@ $theme-linear: apply-diff($theme-blue, $diff);
 		    z-index: 9;
 		    margin: 6% 0 0 4%;
 
-		    #profileContent{ display: flex;}
-		    #profileContent li{ margin: auto;}
+		   .container{
+		   		position: relative;
+		   
+			    #profileContent{ 
+			    	display: flex;
+			    	li{
+			    		&:first-child{
+			    			max-width: 15%;
+			    		}
+			    		width: 29%;
+			    	}
+			    }
+			 
 
+			    #com-leftside{ 
+			    	text-align: left;
+			    	float: left;
+			    	
+			    	
+			    	.avatar{ 
+			    		border: solid .15em rgba($theme-blue2,.7);
+			    		width: 100%;
+			    		height: auto;
+			    		
+			    		border-radius: 50%;
+			    	}
 
+			    	@mixin margin-symbol{margin-right: 5%;}
+			    	.name-area{
+			    		display: flex;
+			    		padding-top: 4%;
 
-		    #com-leftside{ 
-		    	text-align: left;
-		    	float: left;
-		    	.small{
-		    		font-size: .6em;
-		    		margin: 4px 0;
-		    	}
-		    	.avatar{ 
-		    		border: solid .15em rgba($theme-blue2,.7);
-		    		width: 170px;
-		    		height: 170px;
-		    		background: url('../images/landing/present/avatar.jpg') no-repeat ;
-		    		background-size: cover;
-		    		border-radius: 50%;
-		    	}
+			    		.online-circle{
+			    			width: 15px;
+			    			height: 15px;
+			    			border-radius: 50%;
+			    			background-color: $theme-blue2;		    			
+			    			vertical-align: middle;
+			    			@include margin-symbol;
+			    		}
+			    		.name {		    			
+			    			h1{
+			    				color: $theme-blue2; 
+			    				font-weight: bolder;
+			    				font-size: .8em;
+			    			}
+			    		}
+			    	}
 
-		    	@mixin margin-symbol{margin-right: 5%;}
-		    	.name-area{
-		    		display: flex;
-		    		padding-top: 11%;
+			    	.location, .last-online{
+			    		display: flex;
 
-		    		.online-circle{
-		    			width: 15px;
-		    			height: 15px;
-		    			border-radius: 50%;
-		    			background-color: $theme-blue2;		    			
-		    			vertical-align: middle;
-		    			@include margin-symbol;
-		    		}
-		    		.name {		    			
-		    			h1{
-		    				color: $theme-blue2; 
-		    				font-weight: bolder;
-		    			}
-		    		}
-		    	}
+			    	}
 
-		    	.location, .last-online{
-		    		display: flex;
+			    	.fa{
+			    		font-size: .7em;
+			    		@include margin-symbol;
+			    	}
+			    }
 
-		    	}
+			    #com-rightside{ 	
+			    	margin-left: 13px;
+			    
 
-		    	.fa{
-		    		font-size: .7em;
-		    		@include margin-symbol;
-		    	}
-		    }
+			    	.self-text{
+			    		width: 100%;
+			    		height: 4em;
+			    		background-color: rgba(#d7d7d7,0.8);
+			    		border-radius: 5%;
+			    		overflow: scroll;    		
 
-		    #com-rightside{ 
-		    	float: right;
-		    	margin-left: 13px;
-		    	width: 350px;
-
-		    	.self-text{
-		    		width: 100%;
-		    		height: 100px;
-		    		background-color: rgba(#d7d7d7,0.8);
-		    		border-radius: 5%;
-
-		    		p{
-		    			position: absolute;
-		    			font-size: .7em;
-		    			top: 0;
-		    			margin: 2% 2%;
-		    			color: #000;
-		    		}
-		    	}
-		    	.level-area{		    		
-		    		display: flex;
-		    		padding-top: 10%;
-			    	.character{
-			    		width: 28%;
-   						height: 8em;
-						background: url('../images/landing/present/level_5.svg') no-repeat;
-						background-size: cover;
-					}
-					.level-detail{
-						float: left;
-						padding-left: 5%;
-						.text p{color: $theme-blue2;}
-						.point p{font-size: 1.5em; padding-top: 4%;}
-						.level-power{ 
-							width: 130%;
-							height: 1em;
-							border: solid 1px #fff;
-							border-radius: 20px;
+			    		p{
+			    			font-size: .7em;
+			    			padding: 5%;
+			    			color: #000;
+			    		}
+			    	}
+			    	.level-area{		    		
+			    		display: flex;
+			    		padding-top: 10%;
+			    		width: 100%;
+				    	.character{
+				    		max-width: 25%;  
+				    	//	max-height: 25%; 						
+						}
+						.level-detail{
+							padding-left: 5%;
+							width: 100%;
+							.text p{font-size: 1em; color: $theme-blue2;}
+							.point p{font-size: 1.2em; padding-top: 4%;}
+							.level-power{ 
+								width: 100%;
+								height: 1em;
+								border: solid 1px #fff;
+								border-radius: 20px;
+							}
 						}
 					}
-				}
-		    }
+			    }
+			}
     	}   	
 	}
 

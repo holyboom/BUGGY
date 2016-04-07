@@ -73,10 +73,13 @@ $color-title: #4674a9;
   @mixin paste-btm-question{
     margin-top: 4%;
     display: flex;
+    text-align: right;
+    float: right;
     .reply p{font-size: .5em;}
     .right-area{
-      float: right;
-      display: flex;
+        // float: right;
+        // clear: both;
+        display: flex;
 
       .vote-area{
         padding: 2% 0;
@@ -95,15 +98,12 @@ $color-title: #4674a9;
       }
       .user-area{
         display: flex;
-        padding-left: 4%;
+        padding:0 7%;
 
-        .avatar{
-          width: 95px;
-         // height: 50px;
-          border-radius: 50px;
-          background: url('../images/landing/present/avatar.jpg') no-repeat;
-          background-size: contain;
-          margin-right: 5%;
+        img.avatar{
+          width: auto;
+          height: 2em;
+          border-radius: 50%;
         }
         .user-deatil{
           color: $theme-blue2;   
@@ -157,13 +157,15 @@ $color-title: #4674a9;
 
       .top-container{
         display: flex;
+        position: relative;
         h1{
           color: $theme-blue2;
           font-size: 1.7em;
           font-weight: bolder;
         }
-        .receive{
-
+        .received{
+          position: absolute;
+          right: 0;
         }
       }
 
@@ -179,6 +181,7 @@ $color-title: #4674a9;
           border: 2px solid #d7d7d7;
           padding: 1% 10%;
           font-size: .9em;
+          &:hover{color: $theme-blue2;}
         }
       }
 
@@ -213,15 +216,18 @@ $color-title: #4674a9;
       
 
         
-
-        .reply-row{
+        .each-reply{
           
-          @include transition(all .8s);
-          margin-top: 2%;
-          padding-bottom: 5%;
-          width: 70%;
-          @include abox($theme-select + #000109, .55);
-          .btm-question{@include paste-btm-question}
+          .reply-row{
+            
+            @include transition(all .8s);
+            margin-top: 2%;
+            padding-bottom: 5%;
+            width: 70%;
+            float: right;
+            @include abox($theme-select + #000109, .55);
+            .btm-question{@include paste-btm-question}
+          }
         }
       }
     }

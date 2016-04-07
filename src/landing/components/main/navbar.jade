@@ -1,5 +1,14 @@
+mixin noti()
+  li
+    a(href='#')
+      img.avatar(src='../images/landing/blog/tong.png')
+    div.name-area
+      img.character(src='../images/landing/present/level_1.svg')
+      a.comment-text Piyapat เพิ่งตอบความเห็นของคุณ
+    a.time-text 5 นาทีที่แล้ว
+
 nav.navbar.navbar-default.navbar-fixed-top.toptop
-    div.main
+  div.main
     img#slack-top(src='../images/landing/present/tab-header.svg')
     div.navbar-header
       button.navbar-toggle.collapsed(type='button',data-toggle='collapse',data-target='#navbar-collapse',aria-expanded='false')
@@ -9,9 +18,10 @@ nav.navbar.navbar-default.navbar-fixed-top.toptop
         span.icon-bar
     
     div#navbar-collapse.collapse.navbar-collapse
+      img.logo(src='../images/landing/head/logo-black.svg')
       ul.nav.navbar-nav.navbar-right
         li         
-          a.login-btn(href='../../landing/profile.html',target='_blank') Login
+          a.login-btn.btn.btn-primary(type="button" data-toggle="modal" data-target="#login-container" data-whatever="@mdo") เข้าสู่ระบบ
             ul
               li.li-facebook.contact-size
                 i.fa.fa-facebook
@@ -25,14 +35,15 @@ nav.navbar.navbar-default.navbar-fixed-top.toptop
                 i.fa.fa-github
         li
           button.btn.btn-primary(type="button" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo")
-            a.detail Register
+            a.detail ลงทะเบียน
         li.display-non
           div.user-area
             div.avatar
             a holyboom
         li
-          div
+          div.noti-icon-area
             i.fa.fa-bell-o
+            p.noti-num 12
         li
           a.reset-line-a.tag-btn แท็ก
         li
@@ -51,29 +62,18 @@ nav.navbar.navbar-default.navbar-fixed-top.toptop
   div.noti-area
     ul
       li
-        a Piyapat เพิ่งตอบความเห็นของคุณ
-      li
-        a Piyapat เพิ่งตอบความเห็นของคุณ
-      li
-        a Piyapat เพิ่งตอบความเห็นของคุณ
-      li
-        a Piyapat เพิ่งตอบความเห็นของคุณ
-      li
-        a Piyapat เพิ่งตอบความเห็นของคุณ
-      li
-        a Piyapat เพิ่งตอบความเห็นของคุณ
-      li
-        a Piyapat เพิ่งตอบความเห็นของคุณ
-      li
-        a Piyapat เพิ่งตอบความเห็นของคุณ
-      li
-        a Piyapat เพิ่งตอบความเห็นของคุณ
-      li
-        a Piyapat เพิ่งตอบความเห็นของคุณ
-      li
-        a Piyapat เพิ่งตอบความเห็นของคุณ
-      li
-        a Piyapat เพิ่งตอบความเห็นของคุณ
+        a(href='#')
+          img.avatar(src='../images/landing/blog/tong.png')
+        div.name-area
+          img.character(src='../images/landing/present/level_1.svg')
+          a.comment-text Piyapat เพิ่งตอบความเห็นของคุณ
+        a.time-text 5 นาทีที่แล้ว
+      +noti()
+      +noti()
+      +noti()
+      +noti()
+      +noti()
+   
 
 
 #exampleModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalLabel')
@@ -104,7 +104,24 @@ nav.navbar.navbar-default.navbar-fixed-top.toptop
             button.btn.btn-default(type='button', data-dismiss='modal') Close
             button.btn.btn-primary(type='button') Next
 
-
+#login-container.modal.fade(tabindex='-1', role='dialog')
+  .modal-dialog(role='document')
+    .card.card-container(style='position:relative')
+      button.close(style='position:absolute; top: 3%; right: 5%;', type='button', data-dismiss='modal', aria-label='Close')
+        span(aria-hidden='true') ×
+      img#profile-img.profile-img-card(src='../images/landing/present/avatar_2x.png')
+      p#profile-name.profile-name-card
+      form.form-signin
+        span#reauth-email.reauth-email
+        input#inputEmail.form-control(name='input-email', type='email', placeholder='Email address', required='', autofocus='')
+        input#inputPassword.form-control(name='input-password',type='password', placeholder='Password', required='')
+        #remember.checkbox
+          label
+            input(type='checkbox', value='remember-me')
+            |  Remember me
+        button.btn.btn-lg.btn-primary.btn-block.btn-signin(type='submit') Sign in
+      a.forgot-password(href='#')
+        | Forgot the password?
 
 
 

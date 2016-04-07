@@ -1,5 +1,6 @@
 @import './components/main/navbar';
 @import './components/main/present';
+@import './components/main/home-suggest';
 @import './components/main/sponsor';
 @import './components/main/whatis';
 @import './components/main/newsfeed';
@@ -49,6 +50,7 @@ section {
   visibility: hidden;
 }
 .clearfix{height: 1%;}
+.relative{position: relative;}
 
 .btn-reset{
   background: transparent;

@@ -1,3 +1,5 @@
+@import 'login';
+
 $bgDefault      : rgba(2, 1, 2, 0.61);
 $bgDefault-hover: rgba(2, 1, 2, 0.9);
 $theme-blue: #0f1f2f;
@@ -39,6 +41,14 @@ $g-color: #DD4B39;
   }
 }
 
+.logo{
+  -webkit-filter: invert(100%);
+  width: 10%;
+  margin-top: 1.2%;
+  margin-left: 6%;
+  vertical-align: middle;
+}
+
 #show-noti{
   width: 25%;
   position: fixed;
@@ -56,6 +66,45 @@ $g-color: #DD4B39;
         padding: 10% 0;
         text-align: center;
         border-bottom: 1px solid $theme-blue2;
+        margin: 0 auto; 
+        &:hover{
+          background-color: $theme-blue;
+        }
+        img.avatar {
+          width: 40px;
+          height: 40px;     
+          border-radius: 50%;
+          border: 2px solid $theme-blue2;
+          padding: 1%;
+          @include transition(all .1s);
+          //margin-left: 2%;
+          &:hover{
+            border: 4px solid $theme-blue2;
+            @include transition(all .2s);
+
+          }
+        }
+        a{
+          font-size: .8em;
+          color: $theme-blue2;
+          display: block;
+          //margin: auto 0;
+        }
+        .name-area{        
+          position: relative;
+          display: -webkit-inline-box;
+          img{
+            width: 1em;
+            position: absolute;
+            left: -15%;
+            bottom: 0;
+          }
+
+        }
+        .time-text{
+          font-size: .6em;
+          opacity: .7;
+        }
       }
     }
   }
@@ -131,23 +180,42 @@ $g-color: #DD4B39;
           border-radius: 50px;
           background-size: contain;
         }
-        a{
-            font-size: .8em; 
-            opacity: .8;
-            padding:0 11% 0 4%;
-            &:hover{opacity: 1; color: #fff;}
-          }
+        a {
+          font-size: .8em; 
+          opacity: .8;
+          padding:0 11% 0 4%;
+          &:hover{opacity: 1; color: #fff;}
+        }
       }
-      i.fa-bell-o{
-        margin: 8% 0% 0 0;
-        font-size: 1em;
-        color: $theme-blue2;
-        border-radius: 50px;
-        border: 1px solid $theme-blue2;
-        padding: 3px;
-        cursor: pointer;
+      
+        i.fa-bell-o{
+          margin: 8% 0% 0 0;
+          font-size: 1em;
+          color: $theme-blue2;
+          border-radius: 50px;
+          border: 1px solid $theme-blue2;
+          padding: 3px;
+          cursor: pointer;
+        }
 
-      }
+        p.noti-num{
+          text-align: center;
+          line-height: 26px;
+          width: 90%;
+          height: 90%;
+          cursor: pointer;
+          background-color: #AB0707;       
+          border-radius: 50px;
+          color: #fff;
+          position: absolute;
+          top: 50%;
+          left: 40%;
+          font-size: .95em;
+        }
+      
+      
+      
+      
       ul {
         overflow: hidden;
         max-height: 0px;
